@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 public class RouteManager : MonoBehaviour
 {
     public bool OperationRoute = true;
-    public RouteClient RouteClient;
+    public InfoClient RouteClient;
 
     public async void DecideRoute()
     {
-        var response = await RouteClient.HasOperation();
+        var response = await RouteClient.Getinfo();
         switch (response)
         {
-            case WebRequestData<bool> res:
-                if (res.Data)
+            case WebRequestData<Info> res:
+                if (res.Data.Route)
                 {
                     SceneManager.LoadScene("OperationRouteScene", LoadSceneMode.Single);
                 }
