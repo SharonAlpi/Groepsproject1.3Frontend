@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class AppointmentController : MonoBehaviour
+public class AppointmentInstantiator : MonoBehaviour
 {
-    public GameObject panel;
-    public GameObject[] appointmenPrefabs;
-
-    private void Start()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        for (int i = 0; i < appointmenPrefabs.Length; i++)
-        {
-            AppointmentData appointmentData = Instantiate(appointmenPrefabs[i], panel.transform).GetComponent<AppointmentData>();
-        }
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
