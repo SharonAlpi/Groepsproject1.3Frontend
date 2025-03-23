@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class AppointmentFuncs : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public PanelManager panel;
+
+    public void GoToInfo()
     {
-        
+        //TODO: Next Scene
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GoToEdit()
     {
-        
+        panel.ShowPanel(1);
+        Debug.Log("pressed panel 1");
+    }
+
+    public void GoToCompletion()
+    {
+        panel.ShowPanel(2);
+        Debug.Log("pressed panel 2");
     }
 }

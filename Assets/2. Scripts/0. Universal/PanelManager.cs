@@ -8,7 +8,6 @@ public class PanelManager : MonoBehaviour
     void Start()
     {
         HideAllPanels();
-        panels[currentPanel].SetActive(true);
     }
 
     public void ShowPanel(int index)
