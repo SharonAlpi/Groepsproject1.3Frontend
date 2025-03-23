@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class AppointmentData : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class AppointmentData : MonoBehaviour
     // Gegevens van de afspraak
     public int id;
     public string _name;
-    public int _date;
+    public DateTime _date;
     public int _sticker;
 
     private void Start()
@@ -51,7 +52,7 @@ public class AppointmentData : MonoBehaviour
         }
     }
 
-    public void SetData(string name, int date, int sticker)
+    public void SetData(string name, DateTime date, int sticker)
     {
         Debug.Log($"SetData Aangeroepen: Naam={name}, Datum={date}, Sticker={sticker}");
 
@@ -84,8 +85,7 @@ public class AppointmentData : MonoBehaviour
 
     private void UpdateUI()
     {
-        // Update de UI met de huidige data van de afspraak
-        tmpDate.text = _date.ToString();
+        tmpDate.text = _date.ToString("yyyy-MM-dd");
         tmpName.text = _name;
     }
 }

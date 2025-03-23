@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ public class AppointmentEditor : MonoBehaviour
     {
         // Haal invoer op
         string appointmentName = nameCreateInput.text;
-        int appointmentDate = int.Parse(dateCreateInput.text);
+        DateTime appointmentDate = DateTime.Parse(dateCreateInput.text);
 
         // Instantieer een nieuwe afspraak
         GameObject newAppointment = Instantiate(appointmentPrefab, parentTransform);
@@ -45,7 +46,7 @@ public class AppointmentEditor : MonoBehaviour
     {
         // Haal de nieuwe gegevens op
         string newName = nameInput.text;
-        int newDate = int.Parse(dateInput.text);
+        DateTime newDate = DateTime.Parse(dateInput.text);
 
         // Zoek de juiste afspraak en pas deze aan
         foreach (Transform child in parentTransform)

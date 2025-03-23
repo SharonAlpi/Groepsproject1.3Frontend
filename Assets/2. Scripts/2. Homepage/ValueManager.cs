@@ -10,7 +10,7 @@ public class ValueManager : MonoBehaviour
     public int selectedPrefab = -1;
 
     // Houdt bij welk ID als laatste is gebruikt (standaard op 2 omdat er automatisch enkele afspraken zijn)
-    public int lastID = 2;
+    public int lastID = -1;
 
     internal int GetNewID()
     {

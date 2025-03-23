@@ -17,6 +17,7 @@ public class AppointmentSorter : MonoBehaviour
             .Select(child => child.GetComponent<AppointmentData>())
             .Where(appointment => appointment != null)
             .OrderBy(appointment => appointment._date)
+
             .ToList();
 
         // Pas de volgorde van de afspraken in de UI aan
