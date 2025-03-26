@@ -8,6 +8,42 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0. Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/0. Scenes/AppointmentScene.unity
+    guid: 373aaf6ebcab55446b14fdeac7b7ca22
+  - enabled: 1
+    path: Assets/0. Scenes/DiaryEntryScene.unity
+    guid: 870fc5da6e7ee3047b2f86abec3e072e
+  - enabled: 1
+    path: Assets/0. Scenes/DiaryViewScene.unity
+    guid: a883cb76830cb67409107caf0948d6a4
+  - enabled: 1
+    path: Assets/0. Scenes/EnterInfoScene.unity
+    guid: 043cab424c9c1e8489c3dfb7bf0164e4
+  - enabled: 1
+    path: Assets/0. Scenes/ExplanationScene.unity
+    guid: f491b929cfd6ccc4c94bef5d2733b263
+  - enabled: 1
+    path: Assets/0. Scenes/HomeScene.unity
+    guid: d7ec16b284265ee4491f57f933eda513
+  - enabled: 1
+    path: Assets/0. Scenes/LoginScene.unity
+    guid: 50aaa3cfb00c50d40bbfd55ab78e0216
+  - enabled: 1
+    path: Assets/0. Scenes/OperationRouteScene.unity
+    guid: 7ebac4f769b0fa64a9b99821f398a4c5
+  - enabled: 1
+    path: Assets/0. Scenes/RouteScene.unity
+    guid: 3a33fbf307e29b3488026276c39b3b9a
+  - enabled: 1
+    path: Assets/0. Scenes/SignUpScene.unity
+    guid: a7865c60d8a19484f923e3ef7b1bce40
+  - enabled: 1
+    path: Assets/0. Scenes/StartScene.unity
+    guid: 27ef8f1f53b9f184bac0af4402e02b7f
+  - enabled: 1
+    path: Assets/0. Scenes/TipsScene.unity
+    guid: c55a7a04596438e4a96d22e26313bc0b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
   m_UseUCBPForAssetBundles: 0
