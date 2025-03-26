@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RouteManager : MonoBehaviour
 {
-    public bool OperationRoute = true;
+    public bool OperationRoute = false;
     public InfoClient RouteClient;
 
     public async void DecideRoute()
@@ -29,5 +29,18 @@ public class RouteManager : MonoBehaviour
         }
     }
 
-        
+
+    public void PlaceholderDecideRoute()
+    {
+        if (OperationRoute == true)
+        {
+            SceneManager.LoadScene("OperationRouteScene", LoadSceneMode.Single);
+        }
+        else
+        {
+            SceneManager.LoadScene("RouteScene", LoadSceneMode.Single);
+        }
+
+    }
+
 }
