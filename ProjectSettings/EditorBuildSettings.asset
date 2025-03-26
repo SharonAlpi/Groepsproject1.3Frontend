@@ -12,8 +12,23 @@ EditorBuildSettings:
     path: Assets/Scenes/CreateAccountScene.unity
     guid: 043cab424c9c1e8489c3dfb7bf0164e4
   - enabled: 1
+    path: Assets/Scenes/DiaryEntryScene.unity
+    guid: 870fc5da6e7ee3047b2f86abec3e072e
+  - enabled: 1
+    path: Assets/Scenes/InfoInputScene.unity
+    guid: ef7a463a32001314b93e39f93dfdd6ae
+  - enabled: 1
+    path: Assets/Scenes/AppointmentScene.unity
+    guid: 373aaf6ebcab55446b14fdeac7b7ca22
+  - enabled: 1
+    path: Assets/Scenes/DiaryViewScene.unity
+    guid: a883cb76830cb67409107caf0948d6a4
+  - enabled: 1
     path: Assets/Scenes/LoginScene.unity
     guid: 50aaa3cfb00c50d40bbfd55ab78e0216
+  - enabled: 1
+    path: Assets/Scenes/TipsScene.unity
+    guid: c55a7a04596438e4a96d22e26313bc0b
   - enabled: 1
     path: Assets/Scenes/HomeScene.unity
     guid: d7ec16b284265ee4491f57f933eda513
