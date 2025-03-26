@@ -787,8 +787,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -116.39987}
+  m_SizeDelta: {x: 0, y: -232.7997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &231058209
 MonoBehaviour:
@@ -821,11 +821,11 @@ MonoBehaviour:
     m_Right: 200
     m_Top: 150
     m_Bottom: 150
-  m_ChildAlignment: 6
+  m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 100, y: 100}
-  m_Spacing: {x: 150, y: 100}
+  m_Spacing: {x: 100, y: 100}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &231058211
@@ -3932,6 +3932,8 @@ MonoBehaviour:
   canSelect: 1
   selectedPrefab: -1
   lastID: -1
+  hasAppoimnet: 0
+  currentAppoimnetId: 0
   appointmentName: 
 --- !u!114 &1230347796
 MonoBehaviour:
@@ -4019,6 +4021,7 @@ MonoBehaviour:
   parentTransform: {fileID: 231058208}
   valueManager: {fileID: 1230347794}
   sorter: {fileID: 2003589622}
+  queuePrefab: {fileID: 7803463270757014797, guid: 2894fa1f013a2da4fb0436616ac713c3, type: 3}
 --- !u!114 &1258106438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4031,12 +4034,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb93a4f205b5914eb8594c63d9700ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickerInput: 0
   nameInput: {fileID: 1628701279}
   dateInput: {fileID: 1959028589}
   nameCreateInput: {fileID: 1981798002}
   dateCreateInput: {fileID: 1292616977}
   appointmentPrefab: {fileID: 5518528804252477234, guid: aa108306a944a794198ff8e07cd119f8, type: 3}
+  queuePrefab: {fileID: 7803463270757014797, guid: 2894fa1f013a2da4fb0436616ac713c3, type: 3}
   parentTransform: {fileID: 231058208}
   valueManager: {fileID: 1230347794}
   sorter: {fileID: 2003589622}

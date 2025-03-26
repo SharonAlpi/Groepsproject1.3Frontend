@@ -11,10 +11,19 @@ public class ValueManager : MonoBehaviour
     public int selectedPrefab = -1;
 
     // Houdt bij welk ID als laatste is gebruikt (standaard op 2 omdat er automatisch enkele afspraken zijn)
-    public int lastID = -1;
+    public int lastID = 1;
 
     // Startdatum voor de afspraken
-    public DateTime startDate;
+    public DateTime startDate = DateTime.Now.Date;
+
+    // momentuele datum voor de afspraken
+    public DateTime currentDate = DateTime.Now.Date.AddDays(5);
+
+    // of er momenteel een appointment is op de dag
+    public bool hasAppoimnet;
+
+    // momentuele id voor de afspraken op dit moment
+    public int currentAppoimnetId;
 
     public int GetNewID()
     {

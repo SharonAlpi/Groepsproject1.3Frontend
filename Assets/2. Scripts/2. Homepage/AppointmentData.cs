@@ -21,6 +21,9 @@ public class AppointmentData : MonoBehaviour
     public DateTime _date;
     public int _sticker;
 
+    // Gevens van functies
+    public bool isQueue;
+
     private void Start()
     {
         // vind de scripts van de manager
@@ -39,7 +42,7 @@ public class AppointmentData : MonoBehaviour
     public void SelectPrefab()
     {
         // Controleer of selectie is toegestaan en stel de geselecteerde afspraak in
-        if (valueManager.canSelect == true)
+        if (valueManager.canSelect == true && isQueue == true)
         {
             valueManager.selectedPrefab = id;
 
