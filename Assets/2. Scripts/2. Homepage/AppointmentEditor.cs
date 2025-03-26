@@ -32,7 +32,7 @@ public class AppointmentEditor : MonoBehaviour
 
         // Stel de gegevens in
         appointmentData.id = valueManager.GetNewID();
-        appointmentData._name = appointmentName;
+        appointmentData._name = appointmentPrefab.name; 
         appointmentData._date = appointmentDate;
         appointmentData._sticker = 0; // Standaard geen sticker
 
@@ -80,19 +80,21 @@ public class AppointmentEditor : MonoBehaviour
         sorter.SortAppointments();
     }
 
-    public void SaveNewData()
+    public void DeleteAppointment()
     {
-        // Loop door alle afspraken en sla ze op (in debug log)
+        // Zoek de juiste afspraak en verwijder deze
         foreach (Transform child in parentTransform)
         {
             AppointmentData appointment = child.GetComponent<AppointmentData>();
-            if (appointment != null)
+            if (appointment != null && appointment.id == valueManager.selectedPrefab)
             {
-                Debug.Log($"Afspraak opgeslagen: ID={appointment.id}, Naam={appointment._name}, Datum={appointment._date}, Sticker={appointment._sticker}");
+                Debug.Log($"Afspraak verwijderd: ID={appointment.id}, Naam={appointment._name}, Datum={appointment._date}, Sticker={appointment._sticker}");
+                Destroy(child.gameObject);
+                break;
             }
         }
 
-        // Sorteer opnieuw na opslaan
+        // Sorteer opnieuw na verwijdering
         sorter.SortAppointments();
     }
 }

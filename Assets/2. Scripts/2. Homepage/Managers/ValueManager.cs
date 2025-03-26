@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 public class ValueManager : MonoBehaviour
@@ -12,10 +13,19 @@ public class ValueManager : MonoBehaviour
     // Houdt bij welk ID als laatste is gebruikt (standaard op 2 omdat er automatisch enkele afspraken zijn)
     public int lastID = -1;
 
-    internal int GetNewID()
+    // Startdatum voor de afspraken
+    public DateTime startDate;
+
+    public int GetNewID()
     {
         // Verhoog de laatste ID en retourneer deze
         lastID += 1;
         return lastID;
     }
+
+    // laat weten wat de naam is van de momentele geselcteerde prefab
+    public string appointmentName;
+
+    // laat weten wat de datum is van de momentele geselcteerde prefab
+    public DateTime appointmentDate;
 }

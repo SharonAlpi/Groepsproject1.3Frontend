@@ -42,13 +42,16 @@ public class AppointmentData : MonoBehaviour
         if (valueManager.canSelect == true)
         {
             valueManager.selectedPrefab = id;
-            Debug.Log($"Huidige geselecteerde prefab is {valueManager.selectedPrefab}");
 
             // toont paneel
             if (panelManager != null)
             {
                 panelManager.ShowPanel(0);  // Show panel 0 when the appointment is selected
             }
+
+            valueManager.appointmentName = _name;
+            valueManager.appointmentDate = _date;
+            Debug.Log($"Huidige geselecteerde appointment is {_name} op datum {_date} met de id {valueManager.selectedPrefab}");
         }
     }
 

@@ -370,7 +370,6 @@ MonoBehaviour:
   stickerController: {fileID: 8791989396575765018}
   id: 0
   _name: Block1
-  _date: 1
   _sticker: 0
 --- !u!114 &7667465733829269530
 MonoBehaviour:
@@ -384,7 +383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf1f52b76e0c634ebf0d7c21868839f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockType: 2
+  lockType: 1
 --- !u!114 &8170699034482151304
 MonoBehaviour:
   m_ObjectHideFlags: 0
