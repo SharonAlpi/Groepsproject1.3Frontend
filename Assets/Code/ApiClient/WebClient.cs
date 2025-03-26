@@ -9,9 +9,27 @@ public class WebClient : MonoBehaviour
     public string baseUrl;
     private string token;
 
+    public static WebClient instance { get; private set; }
+
+
     public void SetToken(string token)
     {
         this.token = token;
+    }
+
+    void Awake()
+    {
+        // hier controleren we of er al een instantie is van deze singleton
+        // als dit zo is dan hoeven we geen nieuwe aan te maken en verwijderen we deze
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this);
     }
 
     public async Awaitable<IWebRequestReponse> SendGetRequest(string route)
@@ -66,7 +84,7 @@ public class WebClient : MonoBehaviour
                 return new WebRequestError(webRequest.error);
         }
     }
- 
+
     private void AddToken(UnityWebRequest webRequest)
     {
         webRequest.SetRequestHeader("Authorization", "Bearer " + token);
