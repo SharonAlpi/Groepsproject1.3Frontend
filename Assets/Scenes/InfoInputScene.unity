@@ -762,6 +762,7 @@ GameObject:
   - component: {fileID: 262250706}
   - component: {fileID: 262250705}
   - component: {fileID: 262250707}
+  - component: {fileID: 262250708}
   m_Layer: 0
   m_Name: CODE
   m_TagString: Untagged
@@ -811,6 +812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a60ab4117a25454ba24c1d29e276c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InfoClient: {fileID: 262250708}
   NameinputField: {fileID: 2092426081}
   DoctorDropdown: {fileID: 1901481679}
   DateInputField: {fileID: 1699346617}
@@ -818,6 +820,18 @@ MonoBehaviour:
   - Doctor A
   - Doctor B
   - Doctor C
+--- !u!114 &262250708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262250704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbebf776a78919b4198815c0b53890cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &447145834
 GameObject:
   m_ObjectHideFlags: 0

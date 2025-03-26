@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -11,17 +12,17 @@ public class CreateUserInfo : MonoBehaviour
     private int avatarId;
 
     public Info info;
+    public InfoClient InfoClient;
 
     public TMP_InputField NameinputField;
     public TMP_Dropdown DoctorDropdown;
     public TMP_InputField DateInputField;
-    //public GameObject gameObject;
+    //public GameObject gameObject; 
     public string[] doctors;
     void Update()
     {
         name = NameinputField.text;
         doctorName = doctors[DoctorDropdown.value];
-        birthday = DateTime.Parse(DateInputField.text);
     }
     public void change(bool change)
     {   
@@ -29,11 +30,16 @@ public class CreateUserInfo : MonoBehaviour
         if (change) {  }
         else {}
     }
-    public void EnterResults()
+    public async Task EnterResults()
     {
-        info.Route = route;
-        info.BirthDay = birthday;
-        info.NameDocter = doctorName;
-        info.Name = name;
+        birthday = DateTime.Parse(DateInputField.text);
+        await InfoClient.Postinfo(new Info
+        {
+            Route = route,
+            BirthDay = birthday,
+            NameDocter = doctorName,
+            Name = name,
+            AvatarId = 1
+        });
     }
 }

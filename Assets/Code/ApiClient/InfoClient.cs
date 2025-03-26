@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class InfoClient : MonoBehaviour
 {
-    private string OperationRoute = "/info";
+    private string OperationRoute = "/Info";
 
     public async Awaitable<IWebRequestReponse> Getinfo()
     {
         //return new WebRequestData<bool>(false);
 
-        var response = await WebClient.instance.SendGetRequest(OperationRoute);
+        var response = await WebClient.instance.SendGetRequest(OperationRoute+"/GetInfo");
         switch (response)
         {
             case WebRequestData<string> res:
@@ -18,8 +18,12 @@ public class InfoClient : MonoBehaviour
                 return new WebRequestData<Info>(jsonData);
             default:
                 return response;
-        }
-        ;
+        };
 
+    }
+    public async Awaitable<IWebRequestReponse> Postinfo(Info info)
+    {
+        var response = await WebClient.instance.SendPostRequest(OperationRoute+"/CreateInfo",JsonUtility.ToJson(info));
+        return response;
     }
 }
