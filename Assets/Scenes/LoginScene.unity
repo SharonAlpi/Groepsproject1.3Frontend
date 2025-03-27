@@ -2071,6 +2071,7 @@ MonoBehaviour:
   accountRepository: {fileID: 1874251314}
   EmailInputField: {fileID: 264808172}
   PasswordInputField: {fileID: 799975810}
+  text: {fileID: 1467322038}
 --- !u!114 &1874251314
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CreateUserInfo : MonoBehaviour
 {
-    private string name;
+    private string Username;
     private string doctorName;
     private bool route;
     private DateTime birthday;
@@ -22,7 +22,7 @@ public class CreateUserInfo : MonoBehaviour
     public string[] doctors;
     void Update()
     {
-        name = NameinputField.text;
+        Username = NameinputField.text;
         doctorName = doctors[DoctorDropdown.value];
     }
     public void change(bool change)
@@ -34,7 +34,7 @@ public class CreateUserInfo : MonoBehaviour
     public async Task EnterResults()
     {
         birthday = DateTime.Parse(DateInputField.text);
-        if (birthday != null || name == "" || name == null) { MissingRequirement("Didn't submit all required information"); }
+        if (birthday != null || Username == "" || Username == null) { MissingRequirement("Didn't submit all required information"); }
         else
         {
             MissingRequirement("");
@@ -43,7 +43,7 @@ public class CreateUserInfo : MonoBehaviour
                 Route = route,
                 BirthDay = birthday,
                 NameDocter = doctorName,
-                Name = name,
+                Name = Username,
                 AvatarId = 1
             });
         }
