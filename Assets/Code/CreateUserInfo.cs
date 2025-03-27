@@ -14,6 +14,7 @@ public class CreateUserInfo : MonoBehaviour
     public Info info;
     public InfoClient InfoClient;
 
+    public TMP_Text text;
     public TMP_InputField NameinputField;
     public TMP_Dropdown DoctorDropdown;
     public TMP_InputField DateInputField;
@@ -33,13 +34,22 @@ public class CreateUserInfo : MonoBehaviour
     public async Task EnterResults()
     {
         birthday = DateTime.Parse(DateInputField.text);
-        await InfoClient.Postinfo(new Info
+        if (birthday != null || name == "" || name == null) { MissingRequirement("Didn't submit all required information"); }
+        else
         {
-            Route = route,
-            BirthDay = birthday,
-            NameDocter = doctorName,
-            Name = name,
-            AvatarId = 1
-        });
+            MissingRequirement("");
+            await InfoClient.Postinfo(new Info
+            {
+                Route = route,
+                BirthDay = birthday,
+                NameDocter = doctorName,
+                Name = name,
+                AvatarId = 1
+            });
+        }
+    }
+    public void MissingRequirement(string missing)
+    {
+        text.text = missing;
     }
 }
