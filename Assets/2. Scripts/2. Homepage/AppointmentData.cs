@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEditor;
 
 public class AppointmentData : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class AppointmentData : MonoBehaviour
     private PanelManager panelManager;
 
     // Gegevens van de afspraak
-    public int id;
+    public Guid guidId;
     public string _name;
     public DateTime _date;
     public int _sticker;
@@ -37,6 +38,25 @@ public class AppointmentData : MonoBehaviour
             Debug.LogError("StickerController niet gevonden bij kinderen!");
         }
         UpdateUI();
+        CheckIfCompleted();
+    }
+
+    private void CheckIfCompleted()
+    {
+        if(_date < DateTime.Now.Date && _sticker > 0)
+        {
+            SelectPrefab();
+            if (valueManager.canSelect == true && isQueue == true)
+            {
+                valueManager.selectedPrefab = guidId;
+
+                // toont paneel
+                if (panelManager != null)
+                {
+                    panelManager.ShowPanel(3);  // Show panel 0 when the appointment is selected
+                }
+            }
+        }
     }
 
     public void SelectPrefab()
@@ -44,7 +64,7 @@ public class AppointmentData : MonoBehaviour
         // Controleer of selectie is toegestaan en stel de geselecteerde afspraak in
         if (valueManager.canSelect == true && isQueue == true)
         {
-            valueManager.selectedPrefab = id;
+            valueManager.selectedPrefab = guidId;
 
             // toont paneel
             if (panelManager != null)
@@ -63,7 +83,7 @@ public class AppointmentData : MonoBehaviour
         Debug.Log($"SetData Aangeroepen: Naam={name}, Datum={date}, Sticker={sticker}");
 
         // Update alleen de data als deze afspraak is geselecteerd
-        if (valueManager != null && valueManager.selectedPrefab == id)
+        if (valueManager != null && valueManager.selectedPrefab == guidId)
         {
             _name = name;
             _date = date;

@@ -8,7 +8,9 @@ public class ValueManager : MonoBehaviour
     public bool canSelect = true;
 
     // ID van de momenteel geselecteerde afspraak (-1 betekent geen selectie)
-    public int selectedPrefab = -1;
+    public Guid selectedPrefab;
+
+    public Guid UsersID;
 
     // Houdt bij welk ID als laatste is gebruikt (standaard op 2 omdat er automatisch enkele afspraken zijn)
     public int lastID = 1;
@@ -23,7 +25,7 @@ public class ValueManager : MonoBehaviour
     public bool hasAppoimnet;
 
     // momentuele id voor de afspraken op dit moment
-    public int currentAppoimnetId;
+    public Guid currentAppoimnetId;
 
     public int GetNewID()
     {

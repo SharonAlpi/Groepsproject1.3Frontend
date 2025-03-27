@@ -26,7 +26,7 @@ public class AppointmentLock : MonoBehaviour
             return;
 
         // Controleert of deze afspraak is geselecteerd voordat de vergrendeling wordt toegepast
-        if (valueManager.selectedPrefab == appointmentData.id)
+        if (valueManager.selectedPrefab == appointmentData.guidId)
         {
             switch (lockType)
             {

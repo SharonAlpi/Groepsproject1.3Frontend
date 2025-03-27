@@ -1,67 +1,70 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.VisualScripting;
-
+/*
 public class AppointmentInstantiator : MonoBehaviour
 {
-    // Lijst van prefab-objecten voor afspraken
+    //de soorten prefabs
     public List<GameObject> appointmentPrefabs;
 
-    // Transform voor de plek waar afspraken worden geplaatst in de hiërarchie
+    //de grid waaronder het spwant
     public Transform parentTransform;
 
-    // Verwijzing naar de AppointmentSorter voor het sorteren van afspraken
+    //een globale manager van values
     public ValueManager valueManager;
+
+    //sorteert alle appointments
     public AppointmentSorter sorter;
 
-    // Prefab voor de queue die wordt aangemaakt samen met de afspraak
+    //appoinments
+    public AppointmentClient appointmentClient;
+
+    //wachtrij objecten (worden met appoinments gespawned maar worden niet opgeslagen)
     public GameObject queuePrefab;
 
-    // Maakt afspraken aan op basis van de prefab-lijst
-    public void CreateAppointments()
+    //als er nog geen appointments zijn in de database maakt het een paar preset appointments door van elke soort prefab 1x aan te maaken
+    public async void LoadNewAppointments()
     {
         for (int i = 0; i < appointmentPrefabs.Count; i++)
         {
             var prefab = appointmentPrefabs[i];
 
-            // Maak nieuwe afspraakinstantie
             GameObject newAppointment = Instantiate(prefab, parentTransform);
             AppointmentData appointmentData = newAppointment.GetComponent<AppointmentData>();
 
-            // Stel ID, naam, datum en sticker in voor de afspraak
             appointmentData.id = valueManager.GetNewID();
             appointmentData._name = prefab.name;
             appointmentData._date = valueManager.startDate.AddDays(i * 5);
             appointmentData._sticker = 0;
             appointmentData.isQueue = false;
 
-            // Log afspraak details
-            Debug.Log($"Afspraak aangemaakt: ID={appointmentData.id}, Naam={appointmentData._name}, Datum={appointmentData._date}, Sticker={appointmentData._sticker}");
+            Debug.Log($"Afspraak aangemaakt: ID={appointmentData.id}, Naam={appointmentData._name}, Datum={appointmentData._date}");
 
-            // Controleer of dit niet de laatste afspraak is voordat we de queue aanmaken
             if (i < appointmentPrefabs.Count - 1)
             {
-                // Instantieer de bijbehorende queue
                 GameObject newQueue = Instantiate(queuePrefab, parentTransform);
                 AppointmentData queueData = newQueue.GetComponent<AppointmentData>();
 
-                // Stel gegevens in voor de queue
-                queueData.id = appointmentData.id; // ID * -1
+                queueData.id = appointmentData.id; // Unieke ID voor de queue
                 queueData._name = appointmentData._name;
-                queueData._date = appointmentData._date.AddDays(1); // 1 dag later
+                queueData._date = appointmentData._date.AddDays(1);
                 queueData._sticker = 0;
-                appointmentData.isQueue = true;
+                queueData.isQueue = true;
 
-                // Log queue details
-                Debug.Log($"Queue aangemaakt: ID={queueData.id}, Naam={queueData._name}, Datum={queueData._date}, Sticker={queueData._sticker}");
+                Debug.Log($"Queue aangemaakt: ID={queueData.id}, Naam={queueData._name}, Datum={queueData._date}");
             }
         }
 
-        // Sorteer afspraken
-        if (sorter != null)
-        {
-            sorter.SortAppointments();
-        }
+        sorter.SortAppointments();
     }
+
+    //als er al wel appointments zijn dan laad het de appointments die al bestaan in de database
+    public async void LoadAppointments()
+    {
+        //TODO: moet nog appointments moet laden
+    }
+
 }
+*/

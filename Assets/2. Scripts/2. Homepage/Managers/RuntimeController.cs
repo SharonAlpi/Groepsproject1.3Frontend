@@ -5,8 +5,8 @@ using UnityEngine;
 public class RuntimeController : MonoBehaviour
 {
     //verwijzing naar manager scripts
-    public AppointmentInstantiator instantiator;
     public ValueManager valueManager;
+    public AppointmentController appointmentController;
 
     //verwijzing naar text
     public TMP_Text prefabName;
@@ -17,8 +17,7 @@ public class RuntimeController : MonoBehaviour
     void Start()
     {
         //Appointments 
-        instantiator.CreateAppointments();
-
+        appointmentController.LoadAppointments();
         //UI -> Panels
 
         //UI -> Text

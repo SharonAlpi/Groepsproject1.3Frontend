@@ -33,7 +33,7 @@ public class PersonController : MonoBehaviour
         else
         {
             uiImage.SetActive(false);
-            if(!parentAppointmentData.isQueue && parentAppointmentData.id == valueManager.currentAppoimnetId)
+            if(!parentAppointmentData.isQueue && parentAppointmentData.guidId == valueManager.currentAppoimnetId)
             {
                 uiImage.SetActive(true);
             }

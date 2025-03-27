@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
+/*
 public class AppointmentEditor : MonoBehaviour
 {
     // UI-elementen voor invoer
@@ -19,6 +20,7 @@ public class AppointmentEditor : MonoBehaviour
     public ValueManager valueManager;
     public AppointmentSorter sorter;
 
+    //als iemand op een knop drukt dan word er een nieuwe appointment aangemaakt
     public void CreateAppointment()
     {
         // Haal invoer op
@@ -58,6 +60,7 @@ public class AppointmentEditor : MonoBehaviour
         sorter.SortAppointments();
     }
 
+    //veranderd de data in een al bestaande appointment[datum]
     public void EditAppointment()
     {
         // Haal de nieuwe gegevens op
@@ -79,6 +82,7 @@ public class AppointmentEditor : MonoBehaviour
         sorter.SortAppointments();
     }
 
+    //veranderd de data in een al bestaande appointment[sticker]
     public void EditSticker(int newSticker)
     {
         // Zoek de juiste afspraak en pas de sticker aan
@@ -96,6 +100,7 @@ public class AppointmentEditor : MonoBehaviour
         sorter.SortAppointments();
     }
 
+    //verwijderd een appointment
     public void DeleteAppointment()
     {
         int selectedId = valueManager.selectedPrefab;
@@ -137,3 +142,4 @@ public class AppointmentEditor : MonoBehaviour
     }
 
 }
+*/
