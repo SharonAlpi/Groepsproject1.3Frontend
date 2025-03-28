@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 159697314}
   - component: {fileID: 159697313}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Aankomst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -254,17 +254,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-    Fusce id nisl vel libero euismod tincidunt. Mauris nec magna non est vehicula
-    scelerisque vel id risus. Integer hendrerit, nunc ut cursus pellentesque, ligula
-    risus convallis purus, at gravida neque lorem vel sapien. Proin sit amet libero
-    et odio vehicula tincidunt.
+    Sed tincidunt, libero eu fringilla tempus, nisi lacus vehicula nunc, sed convallis
+    ligula augue non erat. Proin ut risus justo. Aliquam erat volutpat. Suspendisse
+    interdum lacus ut diam efficitur, nec congue neque feugiat. Vivamus eget enim
+    eget metus ultrices interdum. Curabitur ut lectus vel erat tincidunt venenatis.
 
 
-    Suspendisse potenti. Curabitur tincidunt, erat
-    a tempor ullamcorper, erat libero aliquet nunc, et tempor erat lacus ac eros.
-    Phasellus lacinia diam ut justo pretium, a tempus ligula scelerisque. Ut vehicula,
-    turpis id lacinia feugiat, augue ligula sollicitudin ex, et feugiat magna neque
-    et odio. Duis eget nulla felis.'
+    Pellentesque
+    in mi quis lectus consequat pharetra vel et odio. Fusce feugiat orci ac nisi
+    feugiat, nec dapibus felis laoreet. Duis in turpis et libero laoreet varius.
+    Ut euismod malesuada eros id congue. Integer tincidunt erat a turpis consectetur,
+    sed tincidunt nisl ultrices. Etiam ut leo ac sapien pharetra scelerisque non
+    non eros.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -568,16 +569,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Placeholder Opt
+  m_text: '- Placeholder Opt 1
 
-    - Placeholder Opt
+    - Placeholder Opt 1
 
-    - Placeholder Opt
+    - Placeholder Opt 1
 
     -
-    Placeholder Opt
+    Placeholder Opt 1
 
-    - Placeholder Opt'
+    - Placeholder Opt 1'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -865,7 +866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title Appointment
+  m_text: Aankomst
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1001,7 +1002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Placeholder Text
+  m_text: Explanation
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1822,7 +1823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad621025e243b21488978b4138a147d2, type: 3}
+  m_Sprite: {fileID: 6881137380210418213, guid: 3f787778ec5381047a300f7b70478883, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2224,7 +2225,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 20, y: 0}
   m_SizeDelta: {x: 700, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2022666620
@@ -2247,7 +2248,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Placeholder Text:'
+  m_text: Tips
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
