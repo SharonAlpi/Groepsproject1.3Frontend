@@ -1,12 +1,13 @@
 using System.Linq;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RegistrationManager : MonoBehaviour
 {
     //voor een button om een acount aan te maken
-    private ApiClient client;
+    private WebClient client;
 
     public TMP_InputField email;
     public TMP_InputField password;
@@ -17,7 +18,7 @@ public class RegistrationManager : MonoBehaviour
     public GameObject Error;
     void Start()
     {
-        client = GameObject.Find("ApiManager").GetComponent<ApiClient>();
+        client = GameObject.Find("ApiManager").GetComponent<WebClient>();
     }
     //waneer je een acount aanmaakt
     public async void Click()
@@ -47,25 +48,28 @@ public class RegistrationManager : MonoBehaviour
                 login.email = email;
                 login.password = password;
                 Debug.Log(login);
-                string result = await client.PerformApiCall("/account/register", "Post", JsonUtility.ToJson(login));
-                Debug.Log(result);
+                var result = await client.SendPostRequest("/account/register", JsonUtility.ToJson(login));
                 //als het resultaat succes was is het aangemaakt en moet je inloggen
-                if (result != null)
+                if (result is WebRequestData<string> dataResponse)
                 {
                     SceneManager.LoadScene("LoginScene");
                     Taken.SetActive(false);
                 }
-                //als het geen goed resultaat was is het acount al bezet
-                else if (result == null)
+                //als acount al bestaat error geven
+                else if (result is WebRequestError errorResponse)
                 {
-                    Taken.SetActive(true);
-                }
-                //als het error was is er iets mis met de database waarschijnlijk azure sloom (0)^(0)
-                else if (result == "Error")
-                {
-                    Error.SetActive(true);
-                    Taken.SetActive(false);
-                }
+                    if (errorResponse.ErrorMessage.Contains("400"))
+                    {
+                        Taken.SetActive(true);
+                        Error.SetActive(false);
+                    }
+                    else
+                    {
+                        Error.SetActive(true);
+                        Taken.SetActive(false);
+                    }
+                    Debug.Log("Error: " + errorResponse.ErrorMessage);
+                }               
                 BadEmail.SetActive(false);
                 BadPassword.SetActive(false);
             }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoginManager : MonoBehaviour
 {
-    private ApiClient client;
+    private WebClient client;
     private TokenStoreAndRefresh tokenStorer;
 
     public TMP_InputField email;
@@ -17,7 +17,7 @@ public class LoginManager : MonoBehaviour
     
     void Start()
     {
-        client = GameObject.Find("ApiManager").GetComponent<ApiClient>();
+        client = GameObject.Find("ApiManager").GetComponent<WebClient>();
         tokenStorer = GameObject.Find("TokenStorer").GetComponent<TokenStoreAndRefresh>();
     }
 
@@ -29,28 +29,32 @@ public class LoginManager : MonoBehaviour
         login.email = email;
         login.password = password;
         Debug.Log(login);
-        string result = await client.PerformApiCall("/account/login", "Post", JsonUtility.ToJson(login));
-        Debug.Log(result);
-        //als het resultaat goed is mag je inloggen
-        if (result != null)
+        IWebRequestReponse result = await client.SendPostRequest("/account/login", JsonUtility.ToJson(login));
+        if (result is WebRequestData<string> dataResponse)
         {
-            Debug.Log("Wat Gestored Wordt: " + JsonUtility.FromJson<LoginResponse>(result));
-            tokenStorer.StoreToken(JsonUtility.FromJson<LoginResponse>(result));
+            string responseData = dataResponse.Data;
+            LoginResponse loginResponse = JsonUtility.FromJson<LoginResponse>(responseData);
+
+            tokenStorer.StoreToken(loginResponse);
+            client.SetToken(loginResponse.accessToken);
             SceneManager.LoadScene("ExplanationScene");
             error.SetActive(false);
             failedToLogin.SetActive(false);
         }
-        //als de database niet reageert dan krijg je error te zien
-        else if(result == "error")
+        // Handle error case
+        else if (result is WebRequestError errorResponse)
         {
-            error.SetActive(true);
-            failedToLogin.SetActive(false);
-        }
-        //als je gegevens fout zijn dan krijg je een error.
-        else
-        {
-            error.SetActive(false);
-            failedToLogin.SetActive(true);
+            if(errorResponse.ErrorMessage.Contains("401"))
+            {
+                failedToLogin.SetActive(true);
+                error.SetActive(false);
+            }
+            else
+            {
+                error.SetActive(true);
+                failedToLogin.SetActive(false);
+            }
+            Debug.Log("Error: " + errorResponse.ErrorMessage);
         }
     }
 }

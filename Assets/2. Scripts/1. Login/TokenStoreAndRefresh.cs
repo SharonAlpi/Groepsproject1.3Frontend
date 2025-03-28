@@ -6,7 +6,7 @@ public class TokenStoreAndRefresh : MonoBehaviour
 {
     private LoginResponse _loginResponse;
 
-    private ApiClient _client;
+    private WebClient _client;
 
     public static TokenStoreAndRefresh instance { get; private set; }
     //zorgen dat we altijd blijven bestaan
@@ -25,7 +25,7 @@ public class TokenStoreAndRefresh : MonoBehaviour
 
     private void Start()
     {
-        _client = GameObject.Find("ApiManager").GetComponent<ApiClient>();
+        _client = GameObject.Find("ApiManager").GetComponent<WebClient>();
     }
 
     public void StoreToken(LoginResponse loginresponse)
@@ -37,9 +37,13 @@ public class TokenStoreAndRefresh : MonoBehaviour
 
     private async void RefreshToken()
     {
-        string result = await _client.PerformApiCall("/account/refresh", "Post", JsonUtility.ToJson(_loginResponse));
-        _loginResponse = JsonUtility.FromJson<LoginResponse>(result);
-        Debug.Log(result);
+        var result = await _client.SendPostRequest("/account/refresh", JsonUtility.ToJson(_loginResponse));
+        if (result is WebRequestData<string> dataResponse)
+        {
+            string responseData = dataResponse.Data;
+            _loginResponse = JsonUtility.FromJson<LoginResponse>(responseData);
+            Debug.Log(dataResponse.Data);
+        }
     }
     private IEnumerator RefreshTokenAftherTime()
     {

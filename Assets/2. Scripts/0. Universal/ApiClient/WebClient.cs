@@ -90,6 +90,7 @@ public class WebClient : MonoBehaviour
         webRequest.SetRequestHeader("Authorization", "Bearer " + token);
     }
 
+
     private string RemoveIdFromJson(string json)
     {
         return json.Replace("\"id\":\"\",", "");

@@ -2680,7 +2680,7 @@ MonoBehaviour:
   Taken: {fileID: 31259835}
   BadPassword: {fileID: 272512546}
   BadEmail: {fileID: 1434961808}
-  Error: {fileID: 0}
+  Error: {fileID: 629995627}
 --- !u!1 &1731194584
 GameObject:
   m_ObjectHideFlags: 0
