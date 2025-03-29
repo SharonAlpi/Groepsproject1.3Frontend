@@ -7,6 +7,9 @@ public class ValueManager : MonoBehaviour
     // Geeft aan of een gebruiker een afspraak mag selecteren
     public bool canSelect = true;
 
+    // Geeft aan of een gebruiker een afspraak mag selecteren'=
+    public int currentPerson = 0;
+
     // ID van de momenteel geselecteerde afspraak (-1 betekent geen selectie)
     public Guid selectedPrefab;
 

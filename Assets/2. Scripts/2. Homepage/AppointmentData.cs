@@ -15,6 +15,7 @@ public class AppointmentData : MonoBehaviour
     //verwijzing naar manager scripts
     private ValueManager valueManager;
     private PanelManager panelManager;
+    private AppointmentLockController lockController;
 
     // Gegevens van de afspraak
     public Guid guidId;
@@ -30,6 +31,7 @@ public class AppointmentData : MonoBehaviour
         // vind de scripts van de manager
         panelManager = FindFirstObjectByType<PanelManager>();
         valueManager = FindFirstObjectByType<ValueManager>();
+        lockController = FindFirstObjectByType<AppointmentLockController>();
 
         // Zoek de StickerController in de kinderen van dit GameObject
         stickerController = GetComponentInChildren<StickerController>();
@@ -43,19 +45,13 @@ public class AppointmentData : MonoBehaviour
 
     private void CheckIfCompleted()
     {
-        if(_date < DateTime.Now.Date && _sticker > 0)
+        if (_date < DateTime.Now.Date)
         {
-            SelectPrefab();
-            if (valueManager.canSelect == true && isQueue == true)
-            {
-                valueManager.selectedPrefab = guidId;
-
-                // toont paneel
-                if (panelManager != null)
-                {
-                    panelManager.ShowPanel(3);  // Show panel 0 when the appointment is selected
-                }
-            }
+            lockController.SetCompletion(true);
+        }
+        else
+        {
+            lockController.SetCompletion(false);
         }
     }
 
