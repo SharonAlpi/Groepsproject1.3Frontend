@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class InfoClient : MonoBehaviour
 {
-    private string OperationRoute = "/info";
+    private string GetRoute = "/Info/GetInfo";
+    private string PostRoute = "/Info/CreateInfo";
 
     public async Awaitable<IWebRequestReponse> Getinfo()
     {
         //return new WebRequestData<bool>(false);
 
-        var response = await WebClient.instance.SendGetRequest(OperationRoute);
+        var response = await WebClient.instance.SendGetRequest(GetRoute);
         switch (response)
         {
             case WebRequestData<string> res:
@@ -20,5 +21,14 @@ public class InfoClient : MonoBehaviour
                 return response;
         };
 
+    }
+    public async Awaitable<IWebRequestReponse> CreateInfo(Info info)
+    {
+        Debug.Log($"Creating info : name{info.Name}");
+        var data = JsonUtility.ToJson(info);
+        Debug.Log($"Serialized Info: {data}");
+
+        // het maakt alleen uit of het goed gegaan is.
+        return await WebClient.instance.SendPostRequest(PostRoute, data);
     }
 }

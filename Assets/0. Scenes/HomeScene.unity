@@ -6333,6 +6333,7 @@ GameObject:
   - component: {fileID: 2071998633}
   - component: {fileID: 2071998632}
   - component: {fileID: 2071998631}
+  - component: {fileID: 2071998634}
   m_Layer: 5
   m_Name: GetInfoAppointment
   m_TagString: Untagged
@@ -6403,10 +6404,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1230347797}
-        m_TargetAssemblyTypeName: UserEventHandler, Assembly-CSharp
-        m_MethodName: GoToScene
-        m_Mode: 3
+      - m_Target: {fileID: 2071998634}
+        m_TargetAssemblyTypeName: UniversalSceneLoader, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
