@@ -38,7 +38,7 @@ public class RouteManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("RouteScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("HomeScene", LoadSceneMode.Single);
         }
 
     }
