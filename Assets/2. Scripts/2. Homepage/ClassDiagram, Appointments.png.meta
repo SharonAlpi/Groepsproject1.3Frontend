@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8bf3389a423ef2a4c937dfd14321dbb5
+guid: 5f0957ba8ce452d4a842fd50a6dc071c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2580402625433821694
-    second: ClassDiagram-Appointments_0
+      213: -7152086661351982111
+    second: ClassDiagram, Appointments_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ClassDiagram-Appointments_0
+      name: ClassDiagram, Appointments_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2380
-        height: 939
+        width: 2356
+        height: 1216
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20e1885db71903cd0800000000000000
-      internalID: -2580402625433821694
+      spriteID: 1eb3e4b231faebc90800000000000000
+      internalID: -7152086661351982111
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ClassDiagram-Appointments_0: -2580402625433821694
+      ClassDiagram, Appointments_0: -7152086661351982111
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
