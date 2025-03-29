@@ -3,10 +3,10 @@ using System;
 [Serializable]
 public class Info
 {
-    public Guid UserId { get; set; }
-    public string Name { get; set; }
-    public string NameDocter { get; set; }
-    public bool Route { get; set; }
-    public DateTime BirthDay { get; set; }
-    public int AvatarId { get; set; }
+    public Guid UserId;
+    public string Name;
+    public string NameDocter;
+    public bool Route;
+    public string BirthDay;
+    public int AvatarId;
 }

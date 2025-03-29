@@ -34,7 +34,7 @@ public class InfoManager : MonoBehaviour
             NameDocter = doctorName,
             Route = route,
             AvatarId = avatarId,
-            BirthDay = date
+            BirthDay = birthDate
         };
         var response = await infoClient.CreateInfo(info);
         switch (response)

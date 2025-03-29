@@ -24,7 +24,9 @@ public class InfoClient : MonoBehaviour
     }
     public async Awaitable<IWebRequestReponse> CreateInfo(Info info)
     {
+        Debug.Log($"Creating info : name{info.Name}");
         var data = JsonUtility.ToJson(info);
+        Debug.Log($"Serialized Info: {data}");
 
         // het maakt alleen uit of het goed gegaan is.
         return await WebClient.instance.SendPostRequest(PostRoute, data);
