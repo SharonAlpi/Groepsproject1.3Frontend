@@ -42,6 +42,7 @@ public class TokenStoreAndRefresh : MonoBehaviour
         {
             string responseData = dataResponse.Data;
             _loginResponse = JsonUtility.FromJson<LoginResponse>(responseData);
+            _client.SetToken(_loginResponse.accessToken);
             Debug.Log(dataResponse.Data);
         }
     }
