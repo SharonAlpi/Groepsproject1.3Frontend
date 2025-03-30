@@ -81,6 +81,7 @@ public class WebClient : MonoBehaviour
                 string responseData = webRequest.downloadHandler.text;
                 return new WebRequestData<string>(responseData);
             default:
+                Debug.Log(webRequest.error);
                 return new WebRequestError(webRequest.error);
         }
     }

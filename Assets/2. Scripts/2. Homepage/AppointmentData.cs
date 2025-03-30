@@ -111,7 +111,7 @@ public class AppointmentData : MonoBehaviour
 
     private void UpdateUI()
     {
-        tmpDate.text = _date.ToString("yyyy-MM-dd");
+        tmpDate.text = _date.ToString("yyyy-MM-ddTHH:mm:ss");
         tmpName.text = _name;
     }
 }

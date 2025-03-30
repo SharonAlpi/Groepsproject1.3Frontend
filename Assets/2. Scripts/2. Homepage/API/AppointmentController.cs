@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Windows;
 
@@ -43,11 +44,11 @@ public class AppointmentController : MonoBehaviour
         // Maakt [Serializable] Appointment aan in Database
         Appointment newAppointment = new Appointment
         {
-            Id = Guid.NewGuid(),
-            Name = appointmentName,
-            Date = appointmentDate,
-            StickerId = 0, // Standaard geen sticker
-            UserId = valueManager.UsersID // Moet worden vervangen door de echte gebruiker-ID
+            id = Guid.NewGuid().ToString(),
+            name = appointmentName,
+            date = appointmentDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+            stickerId = 0, // Standaard geen sticker
+            userId = valueManager.UsersID // Moet worden vervangen door de echte gebruiker-ID
         };
 
         // Wach totdat info door is gegaan
@@ -66,7 +67,7 @@ public class AppointmentController : MonoBehaviour
         int appointmentId = valueManager.GetNewID();
 
         // Stel de gegevens in
-        appointmentData.guidId = newAppointment.Id;
+        appointmentData.guidId = new Guid(newAppointment.id);
         appointmentData._name = appointmentPrefab.name;
         appointmentData._date = appointmentDate;
         appointmentData._sticker = 0;
@@ -79,7 +80,7 @@ public class AppointmentController : MonoBehaviour
         AppointmentData queueData = newQueue.GetComponent<AppointmentData>();
 
         // Stel de gegevens in voor de queue
-        queueData.guidId = newAppointment.Id;
+        queueData.guidId = new Guid(newAppointment.id);
         queueData._name = queuePrefab.name;
         queueData._date = appointmentDate.AddDays(1);
         queueData._sticker = 0;
@@ -110,11 +111,11 @@ public class AppointmentController : MonoBehaviour
                 // Update in de database
                 Appointment updatedAppointment = new Appointment
                 {
-                    Id = Guid.NewGuid(), // Gebruik de juiste ID hier!
-                    Name = newName,
-                    Date = newDate,
-                    StickerId = appointment._sticker,
-                    UserId = valueManager.UsersID // Moet de echte gebruiker-ID zijn
+                    id = Guid.NewGuid().ToString(), // Gebruik de juiste ID hier!
+                    name = newName,
+                    date = newDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                    stickerId = appointment._sticker,
+                    userId = valueManager.UsersID // Moet de echte gebruiker-ID zijn
                 };
 
                 bool success = await appointmentClient.EditAppointment(updatedAppointment);
@@ -149,11 +150,11 @@ public class AppointmentController : MonoBehaviour
                 // Update in de database
                 Appointment updatedAppointment = new Appointment
                 {
-                    Id = Guid.NewGuid(), // Gebruik de juiste ID hier!
-                    Name = appointment._name,
-                    Date = appointment._date,
-                    StickerId = newSticker,
-                    UserId = valueManager.UsersID // Moet de echte gebruiker-ID zijn
+                    id = Guid.NewGuid().ToString(), // Gebruik de juiste ID hier!
+                    name = appointment._name,
+                    date = appointment._date.ToString("yyyy-MM-ddTHH:mm:ss"),
+                    stickerId = newSticker,
+                    userId = valueManager.UsersID // Moet de echte gebruiker-ID zijn
                 };
 
                 bool success = await appointmentClient.EditAppointment(updatedAppointment);
@@ -257,19 +258,21 @@ public class AppointmentController : MonoBehaviour
             var prefab = appointmentPrefabs[i];
 
             // Maak een nieuw `Appointment` object voor de database
+            Debug.Log(valueManager.startDate.AddDays(i * 5));
             Appointment newAppointment = new Appointment
             {
-                Id = Guid.NewGuid(),
-                Name = prefab.name,
-                Date = valueManager.startDate.AddDays(i * 5),
-                StickerId = 0,
-                UserId = valueManager.UsersID
+                id = Guid.NewGuid().ToString(),
+                name = prefab.name,
+                date = valueManager.startDate.AddDays(i * 5).ToString("yyyy-MM-ddTHH:mm:ss"),
+                stickerId = 0,
+                userId = valueManager.UsersID
             };
+            Debug.Log(JsonUtility.ToJson(newAppointment));
 
             bool success = await appointmentClient.CreateAppointment(newAppointment);
             if (!success)
             {
-                Debug.LogError($"Fout bij opslaan van afspraak: {newAppointment.Name}");
+                Debug.LogError($"Fout bij opslaan van afspraak: {newAppointment.name}");
                 continue;
             }
             Debug.Log("Is Continuing");
@@ -281,10 +284,10 @@ public class AppointmentController : MonoBehaviour
             // Genereer een ID voor de afspraak
             int appointmentId = valueManager.GetNewID();
 
-            appointmentData.guidId = newAppointment.Id;
-            appointmentData._name = newAppointment.Name;
-            appointmentData._date = newAppointment.Date;
-            appointmentData._sticker = newAppointment.StickerId;
+            appointmentData.guidId = new Guid(newAppointment.id);
+            appointmentData._name = newAppointment.name;
+            appointmentData._date = DateTime.Parse(newAppointment.date);
+            appointmentData._sticker = newAppointment.stickerId;
             appointmentData.isQueue = false;
 
             Debug.Log($"Nieuwe afspraak aangemaakt: {appointmentData._name} op {appointmentData._date}");
@@ -295,7 +298,7 @@ public class AppointmentController : MonoBehaviour
                 GameObject newQueueObj = Instantiate(queuePrefab, parentTransform);
                 AppointmentData queueData = newQueueObj.GetComponent<AppointmentData>();
 
-                queueData.guidId = newAppointment.Id;
+                queueData.guidId = new Guid(newAppointment.id);
                 queueData._name = appointmentData._name;
                 queueData._date = appointmentData._date.AddDays(1);
                 queueData._sticker = 0;
@@ -313,11 +316,11 @@ public class AppointmentController : MonoBehaviour
     /// </summary>
     private async void LoadDataAppointments(List<Appointment> appointments)
     {
-        foreach (var app in appointments)
+        foreach (Appointment app in appointments)
         {
             GameObject prefab = null;
 
-            switch (app.Name)
+            switch (app.name)
             {
                 case "Aankomst":
                     prefab = appointmentPrefabs[0];
@@ -335,13 +338,14 @@ public class AppointmentController : MonoBehaviour
                     prefab = appointmentPrefabs[4];
                     break;
                 default:
-                    Debug.LogError($"Geen overeenkomstige prefab gevonden voor afspraak: {app.Name}");
+                    Debug.Log(app.name);
+                    Debug.LogError($"Geen overeenkomstige prefab gevonden voor afspraak: {app.name}");
                     continue;
             }
 
             if (prefab == null)
             {
-                Debug.LogError($"Prefab is null voor afspraak: {app.Name}");
+                Debug.LogError($"Prefab is null voor afspraak: {app.name}");
                 continue;
             }
 
@@ -352,10 +356,10 @@ public class AppointmentController : MonoBehaviour
             // Genereer een ID voor de afspraak
             int appointmentId = valueManager.GetNewID();
 
-            appointmentData.guidId = app.Id;
-            appointmentData._name = app.Name;
-            appointmentData._date = app.Date;
-            appointmentData._sticker = app.StickerId;
+            appointmentData.guidId = new Guid(app.id);
+            appointmentData._name = app.name;
+            appointmentData._date = DateTime.Parse(app.date);
+            appointmentData._sticker = app.stickerId;
             appointmentData.isQueue = false;
 
             Debug.Log($"Afspraken geladen: {appointmentData._name} op {appointmentData._date}");
@@ -396,8 +400,18 @@ public class AppointmentController : MonoBehaviour
 
         // Filter appointments to only those that are before or on the current date
         List<Appointment> validAppointments = appointments
-            .Where(appointment => appointment.Date <= currentDate)
-            .OrderByDescending(appointment => appointment.Date) // Sort by most recent first
+            .Where(appointment =>
+            {
+                DateTime appointmentDate;
+                // Try to parse the date using the exact format expected (ISO 8601)
+                return !string.IsNullOrEmpty(appointment.date) &&
+                       DateTime.TryParseExact(appointment.date, "yyyy-MM-ddTHH:mm:ss",
+                           System.Globalization.CultureInfo.InvariantCulture,
+                           System.Globalization.DateTimeStyles.None,
+                           out appointmentDate) &&
+                       appointmentDate <= currentDate;
+            })
+            .OrderByDescending(appointment => appointment.date) // Sort by most recent first
             .ToList();
 
         if (validAppointments.Count == 0)
@@ -410,10 +424,10 @@ public class AppointmentController : MonoBehaviour
         Appointment lastAppointment = validAppointments[0];
 
         // Log the last appointment info (for debugging purposes)
-        Debug.Log($"Laatste afspraak gevonden: ID={lastAppointment.Id}, Datum={lastAppointment.Date}");
+        Debug.Log($"Laatste afspraak gevonden: ID={lastAppointment.id}, Datum={lastAppointment.date}");
 
         // Update the valueManager to use this ID for the next appointment
-        valueManager.currentAppoimnetId = lastAppointment.Id; // Assign the Id from the last appointment
+        valueManager.currentAppoimnetId = new Guid(lastAppointment.id); // Assign the Id from the last appointment
     }
 
 
