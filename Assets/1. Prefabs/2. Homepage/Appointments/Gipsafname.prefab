@@ -60,9 +60,11 @@ MonoBehaviour:
   appointmentData: {fileID: 4782384717336396354}
   stickerPrefabs:
   - {fileID: 2780322594644629994, guid: 4385dfb0e5de9424881b2412b4eec975, type: 3}
-  - {fileID: 2578035142407705320, guid: b051c5a583ec9da47b4ed2cf1f2bc422, type: 3}
-  - {fileID: 3452565273149406589, guid: 4f579d61f28879048967bfd0d72d4b1c, type: 3}
-  - {fileID: 7999825854630325434, guid: 6b98cd798d71e4c41bb4e5b6de101912, type: 3}
+  - {fileID: 8742943629510086644, guid: 989bef5765e8f3f4ca4e52993b9d20f5, type: 3}
+  - {fileID: 77251378383321787, guid: eb8fd75057b0b9443825182c94c28770, type: 3}
+  - {fileID: 5835057044851678869, guid: 221df40d7650c7948b84e5626625bd1c, type: 3}
+  - {fileID: 1652353078069011455, guid: a39ff06efd3ebaf4192a5fc95bf3b815, type: 3}
+  - {fileID: 5042638743272902675, guid: af3015aec1f1b3e458a50b2396f21da4, type: 3}
 --- !u!1 &1149096669253731877
 GameObject:
   m_ObjectHideFlags: 0

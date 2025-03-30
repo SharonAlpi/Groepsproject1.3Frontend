@@ -8,9 +8,14 @@ public class AppointmentLockController : MonoBehaviour
     public TMP_InputField nameInput;
     public TMP_InputField dateInput;
     public Button editButton;
+
     public Button deleteButton;
 
     public void SetInteractable(bool nameEditable, bool dateEditable, bool deleteEditable)
+
+    public Button completionButton;
+
+    public void SetInteractable(bool nameEditable, bool dateEditable)
     {
         if (nameInput != null)
             deleteButton.interactable = deleteEditable;
@@ -25,5 +30,12 @@ public class AppointmentLockController : MonoBehaviour
         // Schakelt de bewerkingsknop in of uit, afhankelijk van of er iets bewerkbaar is
         if (editButton != null)
             editButton.interactable = dateEditable;
+    }
+
+    public void SetCompletion(bool buttonEditable)
+    {
+        // Schakelt de knop om de afspraak af te maken in of uit, afhankelijk van of er iets bewerkbaar is
+        if (completionButton != null)
+            completionButton.interactable = buttonEditable;
     }
 }
