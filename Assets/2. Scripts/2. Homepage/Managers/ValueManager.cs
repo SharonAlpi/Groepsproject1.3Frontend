@@ -19,7 +19,7 @@ public class ValueManager : MonoBehaviour
     public DateTime startDate = DateTime.Now.Date;
 
     // momentuele datum voor de afspraken
-    public DateTime currentDate = DateTime.Now.Date.AddDays(5);
+    public DateTime currentDate = DateTime.Now.Date;
 
     // of er momenteel een appointment is op de dag
     public bool hasAppoimnet;
@@ -39,4 +39,6 @@ public class ValueManager : MonoBehaviour
 
     // laat weten wat de datum is van de momentele geselcteerde prefab
     public DateTime appointmentDate;
+
+    public bool exactAppointment;
 }

@@ -8,10 +8,12 @@ public class AppointmentLockController : MonoBehaviour
     public TMP_InputField nameInput;
     public TMP_InputField dateInput;
     public Button editButton;
+    public Button deleteButton;
 
-
-    public void SetInteractable(bool nameEditable, bool dateEditable)
+    public void SetInteractable(bool nameEditable, bool dateEditable, bool deleteEditable)
     {
+        if (nameInput != null)
+            deleteButton.interactable = deleteEditable;
         // Schakelt bewerking van het naamveld in of uit
         if (nameInput != null)
             nameInput.interactable = nameEditable;

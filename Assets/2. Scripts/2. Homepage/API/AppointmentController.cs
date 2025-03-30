@@ -16,10 +16,11 @@ public class AppointmentController : MonoBehaviour
     // UI-elementen voor invoer
     public TMP_InputField nameInput;
     public TMP_InputField dateInput;
-    public TMP_InputField nameCreateInput;
+    public TMP_Text nameCreateInput;
     public TMP_InputField dateCreateInput;
 
     // Prefab en ouderschap voor afspraken
+    public List<GameObject> defaultAppointmentPrefabs;
     public List<GameObject> appointmentPrefabs;
     public GameObject appointmentPrefab;
     public GameObject queuePrefab;
@@ -29,68 +30,88 @@ public class AppointmentController : MonoBehaviour
     public ValueManager valueManager;
     public AppointmentSorter sorter;
     public AppointmentClient appointmentClient;
-
-
+    public GameObject Warning;
+    public GameObject changeWarning;
+    public DateTime firstAppointment;
     /// <summary>
     ///  Maakt een nieuwe appointment aan en slaat het op in de database
     ///  maakt een queue prefab aan na elke appointmentPrefab soorten(Wordt niet opgeslagen!!!!)
     /// </summary>
     public async void CreateAppointment()
     {
+        bool maycreate = true;
         // Haal invoer op
         string appointmentName = nameCreateInput.text;
         DateTime appointmentDate = DateTime.Parse(dateCreateInput.text);
+        List<Appointment> appointmentList = await appointmentClient.GetAllAppointments();
 
-        // Maakt [Serializable] Appointment aan in Database
-        Appointment newAppointment = new Appointment
+        foreach (Appointment app in appointmentList)
         {
-            id = Guid.NewGuid().ToString(),
-            name = appointmentName,
-            date = appointmentDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-            stickerId = 0, // Standaard geen sticker
-            userId = valueManager.UsersID // Moet worden vervangen door de echte gebruiker-ID
-        };
-
-        // Wach totdat info door is gegaan
-        bool success = await appointmentClient.CreateAppointment(newAppointment);
-        if (!success)
-        {
-            Debug.LogError("Fout bij het aanmaken van de afspraak in de database.");
-            return;
+            if(appointmentDate == DateTime.Parse(app.date))
+            {
+                maycreate = false;
+                Warning.SetActive(true);
+            }
         }
 
-        // Instantiate appointmentPrefab met AppointmentData script
-        GameObject newAppointmentObj = Instantiate(appointmentPrefab, parentTransform);
-        AppointmentData appointmentData = newAppointmentObj.GetComponent<AppointmentData>();
+        if (appointmentDate < firstAppointment)
+        {
+            maycreate = false;
+            Warning.SetActive(true);
+        }
 
-        // Genereer een ID voor de afspraak
-        int appointmentId = valueManager.GetNewID();
+        if (maycreate)
+        {
+            // Maakt [Serializable] Appointment aan in Database
+            Appointment newAppointment = new Appointment
+            {
+                id = Guid.NewGuid().ToString(),
+                name = appointmentName,
+                date = appointmentDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                stickerId = 0, // Standaard geen sticker
+                userId = valueManager.UsersID // Moet worden vervangen door de echte gebruiker-ID
+            };
 
-        // Stel de gegevens in
-        appointmentData.guidId = new Guid(newAppointment.id);
-        appointmentData._name = appointmentPrefab.name;
-        appointmentData._date = appointmentDate;
-        appointmentData._sticker = 0;
-        appointmentData.isQueue = false;
+            // Wach totdat info door is gegaan
+            bool success = await appointmentClient.CreateAppointment(newAppointment);
+            if (!success)
+            {
+                Debug.LogError("Fout bij het aanmaken van de afspraak in de database.");
+                return;
+            }
 
-        Debug.Log($"Nieuwe afspraak aangemaakt: ID={appointmentData.guidId}, Naam={appointmentData._name}, Datum={appointmentData._date}");
+            // Instantiate appointmentPrefab met AppointmentData script
+            GameObject newAppointmentObj = Instantiate(appointmentPrefab, parentTransform);
+            AppointmentData appointmentData = newAppointmentObj.GetComponent<AppointmentData>();
 
-        // Instantiate queuePrefab met AppointmentData script
-        GameObject newQueue = Instantiate(queuePrefab, parentTransform);
-        AppointmentData queueData = newQueue.GetComponent<AppointmentData>();
+            // Genereer een ID voor de afspraak
+            int appointmentId = valueManager.GetNewID();
 
-        // Stel de gegevens in voor de queue
-        queueData.guidId = new Guid(newAppointment.id);
-        queueData._name = queuePrefab.name;
-        queueData._date = appointmentDate.AddDays(1);
-        queueData._sticker = 0;
-        queueData.isQueue = true;
+            // Stel de gegevens in
+            appointmentData.guidId = new Guid(newAppointment.id);
+            appointmentData._name = appointmentPrefab.name;
+            appointmentData._date = appointmentDate;
+            appointmentData._sticker = 0;
+            appointmentData.isQueue = false;
 
-        Debug.Log($"Nieuwe queue aangemaakt: ID={queueData.guidId}, Naam={queueData._name}, Datum={queueData._date}");
+            Debug.Log($"Nieuwe afspraak aangemaakt: ID={appointmentData.guidId}, Naam={appointmentData._name}, Datum={appointmentData._date}");
 
-        // Sorteer de afspraken opnieuw
-        sorter.SortAppointments();
+            // Instantiate queuePrefab met AppointmentData script
+            GameObject newQueue = Instantiate(queuePrefab, parentTransform);
+            AppointmentData queueData = newQueue.GetComponent<AppointmentData>();
 
+            // Stel de gegevens in voor de queue
+            queueData.guidId = new Guid(newAppointment.id);
+            queueData._name = queuePrefab.name;
+            queueData._date = appointmentDate.AddHours(1);
+            queueData._sticker = 0;
+            queueData.isQueue = true;
+
+            Debug.Log($"Nieuwe queue aangemaakt: ID={queueData.guidId}, Naam={queueData._name}, Datum={queueData._date}");
+
+            // Sorteer de afspraken opnieuw
+            sorter.SortAppointments();
+        }
     }
 
     /// <summary>
@@ -98,42 +119,68 @@ public class AppointmentController : MonoBehaviour
     /// </summary>
     public async void EditAppointment()
     {
+        bool mayChange = true;
         // Haal de nieuwe gegevens op
-        string newName = nameInput.text;
         DateTime newDate = DateTime.Parse(dateInput.text);
-
-        // Zoek de juiste afspraak en update deze
-        foreach (Transform child in parentTransform)
+        List<Appointment> appointmentList= await appointmentClient.GetAllAppointments();
+        foreach (Appointment app in appointmentList)
         {
-            AppointmentData appointment = child.GetComponent<AppointmentData>();
-            if (appointment != null && appointment.guidId == valueManager.selectedPrefab)
+            if (newDate == DateTime.Parse(app.date))
             {
-                // Update in de database
-                Appointment updatedAppointment = new Appointment
-                {
-                    id = Guid.NewGuid().ToString(), // Gebruik de juiste ID hier!
-                    name = newName,
-                    date = newDate.ToString("yyyy-MM-ddTHH:mm:ss"),
-                    stickerId = appointment._sticker,
-                    userId = valueManager.UsersID // Moet de echte gebruiker-ID zijn
-                };
-
-                bool success = await appointmentClient.EditAppointment(updatedAppointment);
-                if (!success)
-                {
-                    Debug.LogError("Fout bij het bijwerken van de afspraak in de database.");
-                    return;
-                }
-
-                // Update in Unity
-                appointment.SetData(newName, newDate, appointment._sticker);
-                Debug.Log($"Afspraak bijgewerkt: ID={appointment.guidId}, Naam={newName}, Datum={newDate}");
-                break;
+                mayChange = false;
+                changeWarning.SetActive(true);
             }
         }
+        if(newDate < firstAppointment)
+        {
+            mayChange = false;
+            Warning.SetActive(true);
+        }
 
-        // Sorteer opnieuw
-        sorter.SortAppointments();
+        if (mayChange)
+        {
+            // Zoek de juiste afspraak en update deze
+            foreach (Transform child in parentTransform)
+            {
+                AppointmentData appointment = child.GetComponent<AppointmentData>();
+                if (appointment != null && appointment.guidId == valueManager.selectedPrefab)
+                {
+                    // Update in de database
+                    Appointment updatedAppointment = new Appointment
+                    {
+                        id = appointment.guidId.ToString(), // Gebruik de juiste ID hier!
+                        name = appointment._name,
+                        date = newDate.ToString("yyyy-MM-ddTHH:mm:ss"),
+                        stickerId = appointment._sticker,
+                        userId = valueManager.UsersID // Moet de echte gebruiker-ID zijn
+                    };
+
+                    bool success = await appointmentClient.EditAppointment(updatedAppointment);
+                    if (!success)
+                    {
+                        Debug.LogError("Fout bij het bijwerken van de afspraak in de database.");
+                        return;
+                    }
+
+                    // Update in Unity
+                    appointment.SetData(appointment._name, newDate, appointment._sticker);
+                    Debug.Log($"Afspraak bijgewerkt: ID={appointment.guidId}, Naam={appointment._name}, Datum={newDate}");
+                    break;
+                }
+            }
+
+            foreach (Transform child in parentTransform)
+            {
+                AppointmentData appointment = child.GetComponent<AppointmentData>();
+                if (appointment != null && appointment.guidId == valueManager.selectedPrefab && appointment.isQueue)
+                {
+                    appointment.SetData(appointment._name, newDate.AddHours(1), 0);
+                }
+            }
+
+            // Sorteer opnieuw
+            sorter.SortAppointments();
+        }
     }
 
     /// <summary>
@@ -150,7 +197,7 @@ public class AppointmentController : MonoBehaviour
                 // Update in de database
                 Appointment updatedAppointment = new Appointment
                 {
-                    id = Guid.NewGuid().ToString(), // Gebruik de juiste ID hier!
+                    id = appointment.guidId.ToString(), // Gebruik de juiste ID hier!
                     name = appointment._name,
                     date = appointment._date.ToString("yyyy-MM-ddTHH:mm:ss"),
                     stickerId = newSticker,
@@ -191,11 +238,11 @@ public class AppointmentController : MonoBehaviour
             AppointmentData appointment = child.GetComponent<AppointmentData>();
             if (appointment != null)
             {
-                if (appointment.guidId == selectedId)
+                if (appointment.guidId == selectedId && !appointment.isQueue)
                 {
                     appointmentToDelete = child;
                 }
-                else if (appointment.guidId == selectedId) // Zoek de queue
+                else if (appointment.guidId == selectedId && appointment.isQueue) // Zoek de queue
                 {
                     queueToDelete = child;
                 }
@@ -253,9 +300,9 @@ public class AppointmentController : MonoBehaviour
     /// </summary>
     private async void LoadNewAppointments()
     {
-        for (int i = 0; i < appointmentPrefabs.Count; i++)
+        for (int i = 0; i < defaultAppointmentPrefabs.Count; i++)
         {
-            var prefab = appointmentPrefabs[i];
+            var prefab = defaultAppointmentPrefabs[i];
 
             // Maak een nieuw `Appointment` object voor de database
             Debug.Log(valueManager.startDate.AddDays(i * 5));
@@ -267,6 +314,10 @@ public class AppointmentController : MonoBehaviour
                 stickerId = 0,
                 userId = valueManager.UsersID
             };
+            if(i == 0)
+            {
+                firstAppointment = DateTime.Parse(newAppointment.date);
+            }
             Debug.Log(JsonUtility.ToJson(newAppointment));
 
             bool success = await appointmentClient.CreateAppointment(newAppointment);
@@ -293,14 +344,14 @@ public class AppointmentController : MonoBehaviour
             Debug.Log($"Nieuwe afspraak aangemaakt: {appointmentData._name} op {appointmentData._date}");
 
             // Instantieer queue prefab voor alle afspraken behalve de laatste
-            if (i < appointmentPrefabs.Count - 1)
+            if (i < defaultAppointmentPrefabs.Count - 1)
             {
                 GameObject newQueueObj = Instantiate(queuePrefab, parentTransform);
                 AppointmentData queueData = newQueueObj.GetComponent<AppointmentData>();
 
                 queueData.guidId = new Guid(newAppointment.id);
                 queueData._name = appointmentData._name;
-                queueData._date = appointmentData._date.AddDays(1);
+                queueData._date = appointmentData._date.AddHours(1);
                 queueData._sticker = 0;
                 queueData.isQueue = true;
 
@@ -314,7 +365,7 @@ public class AppointmentController : MonoBehaviour
     /// <summary>
     /// Gaat door de database en initialiseert alle `appointmentPrefabs` met een switch-case.
     /// </summary>
-    private async void LoadDataAppointments(List<Appointment> appointments)
+    private void LoadDataAppointments(List<Appointment> appointments)
     {
         foreach (Appointment app in appointments)
         {
@@ -325,7 +376,7 @@ public class AppointmentController : MonoBehaviour
                 case "Aankomst":
                     prefab = appointmentPrefabs[0];
                     break;
-                case "Follow-up":
+                case "Gipsbehandeling":
                     prefab = appointmentPrefabs[1];
                     break;
                 case "Gipsafname":
@@ -337,10 +388,12 @@ public class AppointmentController : MonoBehaviour
                 case "Thuis":
                     prefab = appointmentPrefabs[4];
                     break;
-                default:
-                    Debug.Log(app.name);
-                    Debug.LogError($"Geen overeenkomstige prefab gevonden voor afspraak: {app.name}");
-                    continue;
+                case "Follow-up":
+                    prefab = appointmentPrefabs[5];
+                    break;
+                case "Operatie":
+                    prefab = appointmentPrefabs[6];
+                    break;
             }
 
             if (prefab == null)
@@ -361,7 +414,10 @@ public class AppointmentController : MonoBehaviour
             appointmentData._date = DateTime.Parse(app.date);
             appointmentData._sticker = app.stickerId;
             appointmentData.isQueue = false;
-
+            if (app.name == "Aankomst")
+            {
+                firstAppointment = DateTime.Parse(app.date);
+            }
             Debug.Log($"Afspraken geladen: {appointmentData._name} op {appointmentData._date}");
 
             // Instantieer queue prefab
@@ -370,7 +426,7 @@ public class AppointmentController : MonoBehaviour
 
             queueData.guidId = appointmentData.guidId;
             queueData._name = appointmentData._name;
-            queueData._date = appointmentData._date.AddDays(1);
+            queueData._date = appointmentData._date.AddHours(1);
             queueData._sticker = 0;
             queueData.isQueue = true;
 
@@ -411,7 +467,15 @@ public class AppointmentController : MonoBehaviour
                            out appointmentDate) &&
                        appointmentDate <= currentDate;
             })
-            .OrderByDescending(appointment => appointment.date) // Sort by most recent first
+            .OrderByDescending(appointment =>
+            {
+                DateTime appointmentDate;
+                DateTime.TryParseExact(appointment.date, "yyyy-MM-ddTHH:mm:ss",
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None,
+                    out appointmentDate);
+                return appointmentDate; // Sorting by the actual date and time
+            })
             .ToList();
 
         if (validAppointments.Count == 0)

@@ -26,14 +26,16 @@ public class PersonController : MonoBehaviour
 
     void UpdateUI()
     {
-        if (parentAppointmentData._date == valueManager.currentDate && parentAppointmentData.isQueue)
+        if (parentAppointmentData._date == valueManager.currentDate && !parentAppointmentData.isQueue)
         {
             uiImage.SetActive(true);
+            valueManager.currentAppoimnetId = parentAppointmentData.guidId;
+            valueManager.exactAppointment = true;
         }
         else
         {
             uiImage.SetActive(false);
-            if(!parentAppointmentData.isQueue && parentAppointmentData.guidId == valueManager.currentAppoimnetId)
+            if(parentAppointmentData.isQueue && parentAppointmentData.guidId == valueManager.currentAppoimnetId && !valueManager.exactAppointment)
             {
                 uiImage.SetActive(true);
             }

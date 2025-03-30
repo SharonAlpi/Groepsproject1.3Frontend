@@ -62,7 +62,7 @@ public class AppointmentData : MonoBehaviour
     public void SelectPrefab()
     {
         // Controleer of selectie is toegestaan en stel de geselecteerde afspraak in
-        if (valueManager.canSelect == true && isQueue == true)
+        if (valueManager.canSelect == true && !isQueue)
         {
             valueManager.selectedPrefab = guidId;
 
@@ -111,7 +111,10 @@ public class AppointmentData : MonoBehaviour
 
     private void UpdateUI()
     {
-        tmpDate.text = _date.ToString("yyyy-MM-ddTHH:mm:ss");
-        tmpName.text = _name;
+        if (!isQueue)
+        {
+            tmpDate.text = _date.ToString("yyyy-MM-dd");
+            tmpName.text = _name;
+        }
     }
 }

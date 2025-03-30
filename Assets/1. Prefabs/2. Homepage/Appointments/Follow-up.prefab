@@ -221,7 +221,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6187704019397121776}
   - component: {fileID: 6754086336318890627}
-  - component: {fileID: 6217376348871121270}
   - component: {fileID: 2517933113584099188}
   m_Layer: 5
   m_Name: Person
@@ -241,7 +240,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.59999996, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8014074007176922273}
   m_Father: {fileID: 4946034936559922846}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -257,13 +257,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2169046622957085491}
   m_CullTransparentMesh: 1
---- !u!114 &6217376348871121270
+--- !u!114 &2517933113584099188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2169046622957085491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa954c6765f5d0b4b8540f6de9769b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exists: 0
+  uiImage: {fileID: 3130179499158112053}
+--- !u!1 &3130179499158112053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8014074007176922273}
+  - component: {fileID: 5704737864951256099}
+  - component: {fileID: 3163831115556498355}
+  m_Layer: 5
+  m_Name: Person (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8014074007176922273
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130179499158112053}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6187704019397121776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5704737864951256099
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130179499158112053}
+  m_CullTransparentMesh: 1
+--- !u!114 &3163831115556498355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130179499158112053}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -287,20 +346,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2517933113584099188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2169046622957085491}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa954c6765f5d0b4b8540f6de9769b65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exists: 0
-  uiImage: {fileID: 2169046622957085491}
 --- !u!1 &4324700609376892267
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,9 +640,9 @@ MonoBehaviour:
   tmpDate: {fileID: 1003582483780463695}
   tmpName: {fileID: 3834671097315350506}
   stickerController: {fileID: 2775184213404211298}
-  id: 0
   _name: Follow-Up
   _sticker: 0
+  isQueue: 0
 --- !u!114 &9046692297453970626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf1f52b76e0c634ebf0d7c21868839f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockType: 1
+  lockType: 2
 --- !u!114 &3164676006511031454
 MonoBehaviour:
   m_ObjectHideFlags: 0

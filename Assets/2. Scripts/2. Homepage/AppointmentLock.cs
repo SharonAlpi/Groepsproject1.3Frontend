@@ -32,15 +32,15 @@ public class AppointmentLock : MonoBehaviour
             {
                 case LockType.NoEdit:
                     // Volledige vergrendeling, niets kan worden bewerkt
-                    lockController.SetInteractable(false, false);
+                    lockController.SetInteractable(false, false, false);
                     break;
                 case LockType.NoNameEdit:
                     // Alleen de datum kan worden aangepast, de naam blijft vast
-                    lockController.SetInteractable(false, true);
+                    lockController.SetInteractable(false, true, false);
                     break;
                 case LockType.Editable:
                     // Beide velden zijn bewerkbaar
-                    lockController.SetInteractable(true, true);
+                    lockController.SetInteractable(false, true, true);
                     break;
             }
         }
