@@ -57,14 +57,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678c50f1899332d4690ad98c6fc78e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appointmentData: {fileID: 4782384717336396354}
+  appointmentData: {fileID: 0}
   stickerPrefabs:
   - {fileID: 2780322594644629994, guid: 4385dfb0e5de9424881b2412b4eec975, type: 3}
-  - {fileID: 8742943629510086644, guid: 989bef5765e8f3f4ca4e52993b9d20f5, type: 3}
-  - {fileID: 77251378383321787, guid: eb8fd75057b0b9443825182c94c28770, type: 3}
-  - {fileID: 5835057044851678869, guid: 221df40d7650c7948b84e5626625bd1c, type: 3}
-  - {fileID: 1652353078069011455, guid: a39ff06efd3ebaf4192a5fc95bf3b815, type: 3}
-  - {fileID: 5042638743272902675, guid: af3015aec1f1b3e458a50b2396f21da4, type: 3}
+  - {fileID: 4047133360042236276, guid: 2002276e15ea33240a2dd22c4042de60, type: 3}
+  - {fileID: 7223658573088666542, guid: ec27634cb6a1a2e4a9cc5bf1e4d559bd, type: 3}
+  - {fileID: 2445979250118214970, guid: fbc1b59f8c663cd40ac4a1fbce9061b7, type: 3}
+  - {fileID: 2694323612104945365, guid: a77935b82f1ece845b6598e3077c1fc7, type: 3}
+  - {fileID: 3037994147454299241, guid: e5c8076567e1c7e4990cb9b9d62b164b, type: 3}
 --- !u!1 &1149096669253731877
 GameObject:
   m_ObjectHideFlags: 0
