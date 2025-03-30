@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 4572276230960097731}
   - component: {fileID: 5857609303666827566}
   m_Layer: 5
-  m_Name: Aankomst
+  m_Name: Aankomstclone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
