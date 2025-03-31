@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 120}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6228425981822849186
@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -33, y: -33}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5169217909252932377
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 678c50f1899332d4690ad98c6fc78e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appointmentData: {fileID: 0}
+  appointmentData: {fileID: 4694454641334708431}
   stickerPrefabs:
   - {fileID: 2780322594644629994, guid: 4385dfb0e5de9424881b2412b4eec975, type: 3}
   - {fileID: 4047133360042236276, guid: 2002276e15ea33240a2dd22c4042de60, type: 3}
@@ -371,6 +371,7 @@ MonoBehaviour:
   _name: Block1
   _sticker: 0
   isQueue: 0
+  infoScene: 0
 --- !u!114 &7667465733829269530
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -231,7 +231,6 @@ public class AppointmentController : MonoBehaviour
         Guid selectedId = valueManager.selectedPrefab;
         Transform appointmentToDelete = null;
         Transform queueToDelete = null;
-
         // Zoek de afspraak en de queue
         foreach (Transform child in parentTransform)
         {
@@ -269,7 +268,8 @@ public class AppointmentController : MonoBehaviour
             Debug.Log($"Queue verwijderd: ID={selectedId}");
             Destroy(queueToDelete.gameObject);
         }
-
+        valueManager.exactAppointment = false;
+        FindLastAppointmentDate();
         // Sorteer opnieuw
         sorter.SortAppointments();
     }
@@ -493,6 +493,4 @@ public class AppointmentController : MonoBehaviour
         // Update the valueManager to use this ID for the next appointment
         valueManager.currentAppoimnetId = new Guid(lastAppointment.id); // Assign the Id from the last appointment
     }
-
-
 }

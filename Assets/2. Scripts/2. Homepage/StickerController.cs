@@ -27,6 +27,11 @@ public class StickerController : MonoBehaviour
         SetSticker();
     }
 
+    private void Update()
+    {
+        //SetSticker();
+    }
+
     public void SetSticker()
     {
         if (appointmentData != null)
@@ -43,19 +48,22 @@ public class StickerController : MonoBehaviour
             // Controleer of de index binnen de geldige grenzen ligt en instantieer de juiste sticker
             if (stickerIndex >= 0 && stickerIndex < stickerPrefabs.Length)
             {
-                currentSticker = Instantiate(stickerPrefabs[stickerIndex], transform);
+                currentSticker = Instantiate(stickerPrefabs[stickerIndex], transform.position, transform.rotation);
+                currentSticker.transform.SetParent(transform);
             }
             else
             {
                 // Gebruik een standaard sticker als de index ongeldig is
-                currentSticker = Instantiate(stickerPrefabs[0], transform);
+                currentSticker = Instantiate(stickerPrefabs[0], transform.position, transform.rotation);
+                currentSticker.transform.SetParent(transform);
             }
         }
         else
         {
             Debug.LogWarning("Geen appointmentData gevonden, standaard sticker wordt gebruikt.");
             // Gebruik een standaard sticker als er geen appointmentData is
-            currentSticker = Instantiate(stickerPrefabs[0], transform);
+            currentSticker = Instantiate(stickerPrefabs[0], transform.position, transform.rotation);
+            currentSticker.transform.SetParent(transform);
         }
     }
 }

@@ -46,7 +46,7 @@ public class AppointmentData : MonoBehaviour
 
     private void CheckIfCompleted()
     {
-        if (_date < DateTime.Now.Date)
+        if (_date < DateTime.Now.Date && _sticker == 0)
         {
             lockController.SetCompletion(true);
         }
@@ -61,6 +61,7 @@ public class AppointmentData : MonoBehaviour
         // Controleer of selectie is toegestaan en stel de geselecteerde afspraak in
         if (valueManager.canSelect == true && !isQueue)
         {
+            CheckIfCompleted();
             valueManager.selectedPrefab = guidId;
 
             // toont paneel

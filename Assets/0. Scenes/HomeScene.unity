@@ -3685,7 +3685,7 @@ MonoBehaviour:
     m_Left: 150
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 75
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
@@ -3846,7 +3846,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Truukjes & Weetjes
+  m_text: Informatie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5842,15 +5842,15 @@ MonoBehaviour:
   - {fileID: 2157928440636244492, guid: 8f78cc8f538114347b3512d14664d1c7, type: 3}
   - {fileID: 1149096669253731877, guid: 7656779259bf99745b9793ce412251df, type: 3}
   - {fileID: 1149096669253731877, guid: a04ac10df8bddd64c8818d5747798f93, type: 3}
-  - {fileID: 1434883229683063142, guid: 913c12407d54df243bd5d44de8eec96e, type: 3}
   - {fileID: 5198601291599433553, guid: 0c938aceea9519641b4f96cdc2dd8a3e, type: 3}
+  - {fileID: 1434883229683063142, guid: 913c12407d54df243bd5d44de8eec96e, type: 3}
   - {fileID: 5518528804252477234, guid: aa108306a944a794198ff8e07cd119f8, type: 3}
   - {fileID: 1149096669253731877, guid: 21ff615855f09e7449355cf7a7839929, type: 3}
   appointmentPrefab: {fileID: 5518528804252477234, guid: aa108306a944a794198ff8e07cd119f8, type: 3}
   queuePrefab: {fileID: 7803463270757014797, guid: 2894fa1f013a2da4fb0436616ac713c3, type: 3}
   parentTransform: {fileID: 810264053}
   valueManager: {fileID: 1230347794}
-  sorter: {fileID: 0}
+  sorter: {fileID: 810264058}
   appointmentClient: {fileID: 80390076}
   Warning: {fileID: 1500319712}
   changeWarning: {fileID: 174760136}
