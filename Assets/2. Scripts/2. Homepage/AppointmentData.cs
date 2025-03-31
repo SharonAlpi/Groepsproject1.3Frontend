@@ -20,7 +20,7 @@ public class AppointmentData : MonoBehaviour
     // Gegevens van de afspraak
     public Guid guidId;
     public string _name;
-    public DateTime _date = DateTime.Now.Date;
+    public DateTime _date;
     public int _sticker;
 
     // Gevens van functies
