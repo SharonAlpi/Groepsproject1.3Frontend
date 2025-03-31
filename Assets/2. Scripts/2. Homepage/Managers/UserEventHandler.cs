@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UserEventHandler : MonoBehaviour
 {
@@ -30,9 +31,9 @@ public class UserEventHandler : MonoBehaviour
     }
 
     //UI -> Panels
-    public void GoToScene(int index)
+    public void GoToScene()
     {
-        //TODO: go to scene
+        SceneManager.LoadScene(valueManager.sceneDirective);
     }
 
     public void GoToPanel(int index)

@@ -25,6 +25,7 @@ public class AppointmentData : MonoBehaviour
 
     // Gevens van functies
     public bool isQueue;
+    public int infoScene;
 
     private void Start()
     {
@@ -70,6 +71,7 @@ public class AppointmentData : MonoBehaviour
 
             valueManager.appointmentName = _name;
             valueManager.appointmentDate = _date;
+            valueManager.sceneDirective = infoScene;
             Debug.Log($"Huidige geselecteerde appointment is {_name} op datum {_date} met de id {valueManager.selectedPrefab}");
         }
     }

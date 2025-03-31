@@ -15,6 +15,8 @@ public class ValueManager : MonoBehaviour
 
     public Guid UsersID;
 
+    public int sceneDirective;
+
     // Houdt bij welk ID als laatste is gebruikt (standaard op 2 omdat er automatisch enkele afspraken zijn)
     public int lastID = 1;
 
