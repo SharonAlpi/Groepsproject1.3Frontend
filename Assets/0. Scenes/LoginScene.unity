@@ -506,6 +506,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BunnyLayerSingleScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 5466215057244944679, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -652
+      objectReference: {fileID: 0}
+    - target: {fileID: 5466215057244944679, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 109
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165095506738307609, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 773
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165095506738307609, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -333
+      objectReference: {fileID: 0}
     - target: {fileID: 8212024860505364004, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -587,7 +603,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2951574684207055254, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 5235097143795429717, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 3976502844578159878, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 5169740901600701081, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 224702474633730568, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 4373456597431863697, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 7812284188493447740, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 7823661743036440237, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}

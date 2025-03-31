@@ -3570,6 +3570,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BunnyLayerInfo
       objectReference: {fileID: 0}
+    - target: {fileID: 7165095506738307609, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -511
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165095506738307609, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -456
+      objectReference: {fileID: 0}
     - target: {fileID: 8212024860505364004, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3651,7 +3659,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7260386113967378193, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 5711773162460071376, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 5235097143795429717, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 7823661743036440237, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 7983505855322798445, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 224702474633730568, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 3976502844578159878, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 8293499837177057161, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 7812284188493447740, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
