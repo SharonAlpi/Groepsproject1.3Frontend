@@ -7,7 +7,7 @@ public class WhoCanItBeNow : MonoBehaviour
 
     private ValueManager valueManager;
 
-    private void Start()
+    private void OnEnable()
     {
         valueManager = FindFirstObjectByType<ValueManager>();
         ShowSprite(valueManager.currentPerson);
