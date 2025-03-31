@@ -253,19 +253,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-    Sed tincidunt, libero eu fringilla tempus, nisi lacus vehicula nunc, sed convallis
-    ligula augue non erat. Proin ut risus justo. Aliquam erat volutpat. Suspendisse
-    interdum lacus ut diam efficitur, nec congue neque feugiat. Vivamus eget enim
-    eget metus ultrices interdum. Curabitur ut lectus vel erat tincidunt venenatis.
-
-
-    Pellentesque
-    in mi quis lectus consequat pharetra vel et odio. Fusce feugiat orci ac nisi
-    feugiat, nec dapibus felis laoreet. Duis in turpis et libero laoreet varius.
-    Ut euismod malesuada eros id congue. Integer tincidunt erat a turpis consectetur,
-    sed tincidunt nisl ultrices. Etiam ut leo ac sapien pharetra scelerisque non
-    non eros.'
+  m_text: "Als je gips eraf is, kan het even duren voordat je alles weer kunt doen
+    zoals normaal. Je arm of been heeft tijd nodig om sterker te worden, dus doe
+    rustig aan. In het begin kun je misschien niet rennen of sporten, maar je kunt
+    wel leuke dingen doen zoals lezen of tekenen.\n\r\nPraat met je school en vrienden.
+    Vertel je leraar dat je misschien even rustig aan moet doen en niet meteen mee
+    kunt doen met gym of zware activiteiten. Je kunt je leraar ook vragen om hulp.\n\r\nJe
+    ouders helpen je met alles wat je nodig hebt, zoals pijn of hygi\xEBne. Soms
+    moet je naar fysiotherapie om je arm of been sterker te maken met oefeningen.\n\r\nHerstel
+    kan tijd kosten, dus wees geduldig. Je wordt steeds sterker!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -292,8 +288,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

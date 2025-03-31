@@ -302,19 +302,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-    Sed tincidunt, libero eu fringilla tempus, nisi lacus vehicula nunc, sed convallis
-    ligula augue non erat. Proin ut risus justo. Aliquam erat volutpat. Suspendisse
-    interdum lacus ut diam efficitur, nec congue neque feugiat. Vivamus eget enim
-    eget metus ultrices interdum. Curabitur ut lectus vel erat tincidunt venenatis.
+  m_text: 'De eerste stap is inchecken. Dit doe je aan de balie bij de spoedeisende
+    hulp (SEH). Je vertelt je naam en wat er is gebeurd. De medewerker schrijft je
+    in en legt uit wat er gaat gebeuren.
 
+    
 
-    Pellentesque
-    in mi quis lectus consequat pharetra vel et odio. Fusce feugiat orci ac nisi
-    feugiat, nec dapibus felis laoreet. Duis in turpis et libero laoreet varius.
-    Ut euismod malesuada eros id congue. Integer tincidunt erat a turpis consectetur,
-    sed tincidunt nisl ultrices. Etiam ut leo ac sapien pharetra scelerisque non
-    non eros.'
+    Daarna moeten je ouders of verzorgers
+    nog wat papierwerk regelen. Dit zijn belangrijke documenten en informatie over
+    de verzekering en andere belangrijke dingen. Dat klinkt misschien saai, maar
+    het helpt ervoor te zorgen dat alles goed geregeld is.
+
+    
+
+    Soms moet
+    je daarna even wachten. Dat is normaal, want de dokters en verpleegkundigen willen
+    iedereen goed helpen. Gelukkig kun je ondertussen een boek lezen, een spelletje
+    spelen of even kletsen.
+
+    
+
+    Geen zorgen, je bent hier in goede handen!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -341,8 +351,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2349,18 +2359,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sed cursus libero a felis tincidunt, nec luctus arcu volutpat. Nulla facilisi.
-    Suspendisse bibendum enim sed sem gravida, sit amet maximus elit consequat. Cras
-    auctor, felis eget pharetra consequat, libero erat luctus risus, in gravida elit
-    lorem non ligula. Mauris id velit id erat consequat sagittis. Morbi euismod libero
-    vel risus ultricies tristique.
+  m_text: 'Nu is het tijd voor de eerste check! Een verpleegkundige komt bij je om
+    te kijken hoe het met je gaat en hoe erg de verwonding is. Dit heet triage (dit
+    spreek je uit als trie-aazj). De verpleegkundige stelt wat vragen, bekijkt je
+    arm of been en luistert goed naar wat jij en je ouders vertellen.
 
+    
 
-    Curabitur nec elit in sapien scelerisque
-    euismod. Proin bibendum, orci non eleifend facilisis, odio ex convallis metus,
-    eu elementum nisi elit non ligula. Donec tincidunt erat eget erat condimentum,
-    eget interdum eros iaculis. Nullam malesuada libero ac est dictum, et pharetra
-    sapien vulputate.'
+    Als
+    je pijn hebt, kunnen ze je daar iets voor geven. Soms is dat een drankje (siroop)
+    of een zetpil, zodat de pijn minder wordt en je je fijner voelt.
+
+    
+
+    Daarna
+    vertelt de verpleegkundige wat de volgende stap is. Je bent alweer een stapje
+    dichter bij de oplossing!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2387,8 +2403,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3917,18 +3933,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Vivamus convallis massa vel eros efficitur, sit amet auctor metus elementum.
-    Suspendisse suscipit nulla at facilisis fermentum. Duis ut turpis turpis. In
-    ac enim sed sapien auctor interdum non a purus. Aenean condimentum nunc ac venenatis
-    maximus. Integer laoreet, nisi sed tincidunt gravida, risus nulla scelerisque
-    justo, eget efficitur libero lacus sit amet felis.
-
-
-    Aliquam erat volutpat.
-    Cras ullamcorper tincidunt velit non vulputate. Morbi consectetur lacus ut mi
-    fermentum, eget sodales urna fringilla. Donec eu urna eget sapien efficitur volutpat
-    at ut sapien. Aenean euismod lectus ut odio faucibus tincidunt. Nunc faucibus
-    bibendum purus, id ultricies velit sagittis ut.'
+  m_text: "Om goed te zien wat er aan de hand is, wordt er een r\xF6ntgenfoto gemaakt.
+    Dit is een speciale foto waarmee de dokter in je lichaam kan kijken, zonder dat
+    het pijn doet!\r\nJe gaat naar een kamer met een groot r\xF6ntgenapparaat. De
+    laborant (dat is de persoon die de foto maakt) helpt je om goed te zitten of
+    liggen. Soms krijg je een speciaal schort, dat helpt om je lichaam te beschermen
+    tegen de straling van het apparaat.\n\r\nWanneer de foto wordt gemaakt, moet
+    je heel stil blijven zitten \u2013 net als een standbeeld! Dit duurt maar een
+    paar seconden. Daarna kijkt de dokter naar de foto om te zien waar de breuk zit
+    en hoe deze het beste goed gezet kan worden.\r\nGoed gedaan, de dokter weet nu
+    precies wat er aan de hand is!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3955,8 +3969,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
