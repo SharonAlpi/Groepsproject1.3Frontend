@@ -253,19 +253,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-    Sed tincidunt, libero eu fringilla tempus, nisi lacus vehicula nunc, sed convallis
-    ligula augue non erat. Proin ut risus justo. Aliquam erat volutpat. Suspendisse
-    interdum lacus ut diam efficitur, nec congue neque feugiat. Vivamus eget enim
-    eget metus ultrices interdum. Curabitur ut lectus vel erat tincidunt venenatis.
-
-
-    Pellentesque
-    in mi quis lectus consequat pharetra vel et odio. Fusce feugiat orci ac nisi
-    feugiat, nec dapibus felis laoreet. Duis in turpis et libero laoreet varius.
-    Ut euismod malesuada eros id congue. Integer tincidunt erat a turpis consectetur,
-    sed tincidunt nisl ultrices. Etiam ut leo ac sapien pharetra scelerisque non
-    non eros.'
+  m_text: "Soms is een operatie nodig om je bot goed te laten genezen. De dokter
+    bekijkt de r\xF6ntgenfoto, legt uit wat er gaat gebeuren en beantwoordt je vragen.
+    Je ouders geven toestemming voor de operatie.\n\nDaarna word je klaargemaakt.
+    Je krijgt een operatiehemd aan en soms een IV-lijn voor medicijnen, zodat je
+    tijdens en na de operatie geen pijn hebt en je je beter voelt. De verpleegkundigen
+    zorgen ervoor dat alles goed verloopt.\n\r\nDe anesthesist geeft je een slaapmiddel
+    via een kapje of infuus. Je voelt je slaperig worden en voor je het weet, begint
+    de operatie.\n\r\nTijdens de operatie zet de orthopeed je bot vast met gips,
+    schroefjes of plaatjes. Je merkt hier niets van en al snel is het klaar.\n\r\nNa
+    de operatie word je wakker in een rustige kamer. Als je pijn hebt, krijg je medicijnen.
+    De dokter legt uit hoe je voor je gips of spalk moet zorgen.\r\nAls alles goed
+    gaat, mag je snel weer naar huis. Goed gedaan!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -292,8 +291,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

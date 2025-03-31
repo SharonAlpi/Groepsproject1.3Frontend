@@ -2338,8 +2338,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Uitleg van hoe de app gaat helpen + moedigd de ouders aan om het kind te
-    helpen met dit procces
+  m_text: "Welkom bij Gips&Zo! Hier ga je ontdekken wat er allemaal gebeurt als je
+    een gipsbehandeling krijgt. Elke stap van het gipsavontuur wordt uitgelegd, zodat
+    je precies weet wat je kunt verwachten. \n\nEerst voer je je informatie in door
+    op de knop met het potlood te klikken. Daarna kun je klikken op de wereldknop.
+    Klik daarna op de verschillende stappen en leer wat er gaat gebeuren. Zo word
+    jij een echte gipsheld!\n\r\nOuders, doe mee! Samen ontdekken maakt het leuker
+    en helpt je kind zich beter voor te bereiden. Bekijk de stappen samen en stel
+    vragen als dat nodig is!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2366,14 +2372,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

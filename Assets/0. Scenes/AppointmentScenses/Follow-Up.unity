@@ -253,19 +253,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.
-    Sed tincidunt, libero eu fringilla tempus, nisi lacus vehicula nunc, sed convallis
-    ligula augue non erat. Proin ut risus justo. Aliquam erat volutpat. Suspendisse
-    interdum lacus ut diam efficitur, nec congue neque feugiat. Vivamus eget enim
-    eget metus ultrices interdum. Curabitur ut lectus vel erat tincidunt venenatis.
-
-
-    Pellentesque
-    in mi quis lectus consequat pharetra vel et odio. Fusce feugiat orci ac nisi
-    feugiat, nec dapibus felis laoreet. Duis in turpis et libero laoreet varius.
-    Ut euismod malesuada eros id congue. Integer tincidunt erat a turpis consectetur,
-    sed tincidunt nisl ultrices. Etiam ut leo ac sapien pharetra scelerisque non
-    non eros.'
+  m_text: "Na je behandeling of operatie is het belangrijk om een follow-up afspraak
+    te maken bij de dokter. Tijdens deze afspraak kijkt de dokter hoe goed je arm
+    of been is genezen.\n\nSoms wordt er een r\xF6ntgenfoto gemaakt om te zien of
+    alles goed zit.\r\nDe dokter kan je ook vertellen wat je nog moet doen om goed
+    te herstellen en of je misschien nog oefeningen nodig hebt, zoals fysiotherapie.
+    Het is ook een goed moment om vragen te stellen als je ergens mee zit, zoals
+    pijn of hoe je verder moet zorgen voor je arm of been.\n\r\nDoor regelmatig terug
+    te gaan voor controle, weet je zeker dat je herstel goed verloopt en dat je weer
+    snel sterker wordt!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
