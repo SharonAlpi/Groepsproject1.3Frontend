@@ -374,7 +374,7 @@ MonoBehaviour:
   _name: Aankomst
   _sticker: 0
   isQueue: 0
-  infoScene: 0
+  infoScene: 9
 --- !u!114 &4572276230960097731
 MonoBehaviour:
   m_ObjectHideFlags: 0
