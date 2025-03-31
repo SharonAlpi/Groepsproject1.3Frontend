@@ -8,8 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0. Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/0. Scenes/AppointmentScenses/Plaster.unity
+  - enabled: 0
+    path: Assets/0. Scenes/AppointmentScene.unity
     guid: 373aaf6ebcab55446b14fdeac7b7ca22
   - enabled: 1
     path: Assets/0. Scenes/DiaryEntryScene.unity
@@ -29,7 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0. Scenes/LoginScene.unity
     guid: 50aaa3cfb00c50d40bbfd55ab78e0216
-  - enabled: 1
+  - enabled: 0
     path: Assets/0. Scenes/OperationRouteScene.unity
     guid: 7ebac4f769b0fa64a9b99821f398a4c5
   - enabled: 1

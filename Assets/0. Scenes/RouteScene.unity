@@ -3769,6 +3769,7 @@ MonoBehaviour:
   dateInput: {fileID: 724010421}
   editButton: {fileID: 1738772346}
   deleteButton: {fileID: 1948255645}
+  completionButton: {fileID: 0}
 --- !u!114 &1218380141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5463,6 +5464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSelect: 1
+  currentPerson: 0
+  sceneDirective: 0
   lastID: -1
   hasAppoimnet: 0
   appointmentName: 
