@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEditor;
 
 public class AppointmentData : MonoBehaviour
 {
@@ -14,18 +15,24 @@ public class AppointmentData : MonoBehaviour
     //verwijzing naar manager scripts
     private ValueManager valueManager;
     private PanelManager panelManager;
+    private AppointmentLockController lockController;
 
     // Gegevens van de afspraak
-    public int id;
+    public Guid guidId;
     public string _name;
     public DateTime _date;
     public int _sticker;
+
+    // Gevens van functies
+    public bool isQueue;
+    public int infoScene;
 
     private void Start()
     {
         // vind de scripts van de manager
         panelManager = FindFirstObjectByType<PanelManager>();
         valueManager = FindFirstObjectByType<ValueManager>();
+        lockController = FindFirstObjectByType<AppointmentLockController>();
 
         // Zoek de StickerController in de kinderen van dit GameObject
         stickerController = GetComponentInChildren<StickerController>();
@@ -34,14 +41,28 @@ public class AppointmentData : MonoBehaviour
             Debug.LogError("StickerController niet gevonden bij kinderen!");
         }
         UpdateUI();
+        CheckIfCompleted();
+    }
+
+    private void CheckIfCompleted()
+    {
+        if (_date < DateTime.Now.Date && _sticker == 0)
+        {
+            lockController.SetCompletion(true);
+        }
+        else
+        {
+            lockController.SetCompletion(false);
+        }
     }
 
     public void SelectPrefab()
     {
         // Controleer of selectie is toegestaan en stel de geselecteerde afspraak in
-        if (valueManager.canSelect == true)
+        if (valueManager.canSelect == true && !isQueue)
         {
-            valueManager.selectedPrefab = id;
+            CheckIfCompleted();
+            valueManager.selectedPrefab = guidId;
 
             // toont paneel
             if (panelManager != null)
@@ -51,6 +72,7 @@ public class AppointmentData : MonoBehaviour
 
             valueManager.appointmentName = _name;
             valueManager.appointmentDate = _date;
+            valueManager.sceneDirective = infoScene;
             Debug.Log($"Huidige geselecteerde appointment is {_name} op datum {_date} met de id {valueManager.selectedPrefab}");
         }
     }
@@ -60,7 +82,7 @@ public class AppointmentData : MonoBehaviour
         Debug.Log($"SetData Aangeroepen: Naam={name}, Datum={date}, Sticker={sticker}");
 
         // Update alleen de data als deze afspraak is geselecteerd
-        if (valueManager != null && valueManager.selectedPrefab == id)
+        if (valueManager != null && valueManager.selectedPrefab == guidId)
         {
             _name = name;
             _date = date;
@@ -88,7 +110,10 @@ public class AppointmentData : MonoBehaviour
 
     private void UpdateUI()
     {
-        tmpDate.text = _date.ToString("yyyy-MM-dd");
-        tmpName.text = _name;
+        if (!isQueue)
+        {
+            tmpDate.text = _date.ToString("yyyy-MM-dd");
+            tmpName.text = _name;
+        }
     }
 }

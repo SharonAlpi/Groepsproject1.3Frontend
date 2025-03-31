@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2760320889323451764}
   - component: {fileID: 5849338575021491191}
   - component: {fileID: 878595844041977828}
-  - component: {fileID: 6369817427817658675}
   m_Layer: 5
   m_Name: EmptySticker
   m_TagString: Untagged
@@ -76,17 +75,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6369817427817658675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2780322594644629994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 678c50f1899332d4690ad98c6fc78e96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  appointmentData: {fileID: 0}
-  stickers: []

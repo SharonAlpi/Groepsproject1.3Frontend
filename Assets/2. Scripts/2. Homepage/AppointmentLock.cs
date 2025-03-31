@@ -26,21 +26,21 @@ public class AppointmentLock : MonoBehaviour
             return;
 
         // Controleert of deze afspraak is geselecteerd voordat de vergrendeling wordt toegepast
-        if (valueManager.selectedPrefab == appointmentData.id)
+        if (valueManager.selectedPrefab == appointmentData.guidId)
         {
             switch (lockType)
             {
                 case LockType.NoEdit:
                     // Volledige vergrendeling, niets kan worden bewerkt
-                    lockController.SetInteractable(false, false);
+                    lockController.SetInteractable(false, false, false);
                     break;
                 case LockType.NoNameEdit:
                     // Alleen de datum kan worden aangepast, de naam blijft vast
-                    lockController.SetInteractable(false, true);
+                    lockController.SetInteractable(false, true, false);
                     break;
                 case LockType.Editable:
                     // Beide velden zijn bewerkbaar
-                    lockController.SetInteractable(true, true);
+                    lockController.SetInteractable(false, true, true);
                     break;
             }
         }

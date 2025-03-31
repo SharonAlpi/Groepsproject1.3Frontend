@@ -1,38 +1,39 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UserEventHandler : MonoBehaviour
 {
     //verwijzing naar manager scripts
     public ValueManager valueManager;
     public PanelManager panelManager;
-    public AppointmentEditor appointmentEditor;
+    public AppointmentController controller;
 
     //Appointments
     public void CreateAppointment()
     {
-        appointmentEditor.CreateAppointment();
+        controller.CreateAppointment();
     }
 
     public void EditAppointment()
     {
-        appointmentEditor.EditAppointment();
+        controller.EditAppointment();
     }
 
     public void EditSticker(int newSticker)
     {
-        appointmentEditor.EditSticker(newSticker);
+        controller.EditSticker(newSticker);
     }
 
     public void DeleteAppointment()
     {
-        appointmentEditor.DeleteAppointment();
+        controller.DeleteAppointment();
     }
 
     //UI -> Panels
-    public void GoToScene(int index)
+    public void GoToScene()
     {
-        //TODO: go to scene
+        SceneManager.LoadScene(valueManager.sceneDirective);
     }
 
     public void GoToPanel(int index)
