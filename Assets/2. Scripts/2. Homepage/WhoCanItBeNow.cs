@@ -1,53 +1,39 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WhoCanItBeNow : MonoBehaviour
 {
-    // Array met beschikbare sticker-prefabs
-    public GameObject[] stickerPrefabs;
+    public List<GameObject> characterImages = new List<GameObject>();
 
-    // Huidige actieve sticker
-    private GameObject currentSticker;
-
-    //verwijzing naar manager scripts
     private ValueManager valueManager;
 
     private void Start()
     {
         valueManager = FindFirstObjectByType<ValueManager>();
-
-        // Stel de sticker in bij het starten van het script
-        SetSticker();
+        ShowSprite(valueManager.currentPerson);
     }
 
-
-    public void SetSticker()
+    public void ShowSprite(int index)
     {
-        if (valueManager != null)
+        if (characterImages == null || characterImages.Count == 0)
         {
-            int stickerIndex = valueManager.currentPerson;
-            Debug.Log("Sticker index: " + stickerIndex);
-
-            // Verwijder de huidige sticker als er een actief is
-            if (currentSticker != null)
-            {
-                Destroy(currentSticker);
-            }
-
-            // Controleer of de index binnen de geldige grenzen ligt en instantieer de juiste sticker
-            if (stickerIndex >= 0 && stickerIndex < stickerPrefabs.Length)
-            {
-                currentSticker = Instantiate(stickerPrefabs[stickerIndex], transform);
-            }
-            else
-            {
-                // Gebruik een standaard sticker als de index ongeldig is
-                currentSticker = Instantiate(stickerPrefabs[0], transform);
-            }
+            Debug.LogWarning("Character list is empty!");
+            return;
         }
-        else
+
+        if (index < 0 || index >= characterImages.Count)
         {
-            // Gebruik een standaard sticker als er geen appointmentData is
-            currentSticker = Instantiate(stickerPrefabs[0], transform);
+            Debug.LogWarning("Index out of range!");
+            return;
         }
+
+        // Disable all GameObjects
+        foreach (GameObject obj in characterImages)
+        {
+            obj.SetActive(false);
+        }
+
+        // Enable the correct one
+        characterImages[index].SetActive(true);
     }
 }

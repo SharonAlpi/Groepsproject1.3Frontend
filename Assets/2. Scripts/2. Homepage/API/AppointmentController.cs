@@ -376,7 +376,7 @@ public class AppointmentController : MonoBehaviour
                 case "Aankomst":
                     prefab = appointmentPrefabs[0];
                     break;
-                case "Gipsbehandeling":
+                case "Gipsbeurt":
                     prefab = appointmentPrefabs[1];
                     break;
                 case "Gipsafname":
