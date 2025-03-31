@@ -13,6 +13,16 @@ public class StickerController : MonoBehaviour
 
     private void Start()
     {
+        // Haal appointmentData op uit het parent-object als deze niet is ingesteld
+        if (appointmentData == null)
+        {
+            appointmentData = GetComponentInParent<AppointmentData>();
+            if (appointmentData == null)
+            {
+                Debug.LogWarning("StickerController: Geen appointmentData gevonden in parent-object.");
+            }
+        }
+
         // Stel de sticker in bij het starten van het script
         SetSticker();
     }
@@ -43,6 +53,7 @@ public class StickerController : MonoBehaviour
         }
         else
         {
+            Debug.LogWarning("Geen appointmentData gevonden, standaard sticker wordt gebruikt.");
             // Gebruik een standaard sticker als er geen appointmentData is
             currentSticker = Instantiate(stickerPrefabs[0], transform);
         }
