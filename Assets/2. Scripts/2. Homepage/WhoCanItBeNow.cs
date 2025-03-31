@@ -11,7 +11,7 @@ public class WhoCanItBeNow : MonoBehaviour
     //verwijzing naar manager scripts
     private ValueManager valueManager;
 
-    private void Start()
+    private void OnEnable()
     {
         valueManager = FindFirstObjectByType<ValueManager>();
 
