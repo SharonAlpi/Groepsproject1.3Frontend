@@ -306,21 +306,21 @@ MonoBehaviour:
     hulp (SEH). Je vertelt je naam en wat er is gebeurd. De medewerker schrijft je
     in en legt uit wat er gaat gebeuren.
 
-    
+
 
     Daarna moeten je ouders of verzorgers
     nog wat papierwerk regelen. Dit zijn belangrijke documenten en informatie over
     de verzekering en andere belangrijke dingen. Dat klinkt misschien saai, maar
     het helpt ervoor te zorgen dat alles goed geregeld is.
 
-    
 
-    Soms moet
-    je daarna even wachten. Dat is normaal, want de dokters en verpleegkundigen willen
-    iedereen goed helpen. Gelukkig kun je ondertussen een boek lezen, een spelletje
-    spelen of even kletsen.
 
-    
+    Soms moet je daarna
+    even wachten. Dat is normaal, want de dokters en verpleegkundigen willen iedereen
+    goed helpen. Gelukkig kun je ondertussen een boek lezen, een spelletje spelen
+    of even kletsen.
+
+
 
     Geen zorgen, je bent hier in goede handen!
 
@@ -1913,7 +1913,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 925815589}
   m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_VideoClip: {fileID: 32900000, guid: 6c38dfc6e18637745b062f37c89cea67, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -2364,13 +2364,13 @@ MonoBehaviour:
     spreek je uit als trie-aazj). De verpleegkundige stelt wat vragen, bekijkt je
     arm of been en luistert goed naar wat jij en je ouders vertellen.
 
-    
+
 
     Als
     je pijn hebt, kunnen ze je daar iets voor geven. Soms is dat een drankje (siroop)
     of een zetpil, zodat de pijn minder wordt en je je fijner voelt.
 
-    
+
 
     Daarna
     vertelt de verpleegkundige wat de volgende stap is. Je bent alweer een stapje
