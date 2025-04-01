@@ -8,7 +8,8 @@ public class PersonController : MonoBehaviour
 
     public bool exists = false;
     public GameObject uiImage; // Sleep hier de UI-afbeelding in via de Inspector
-
+    public Image person;
+    public Sprite[] persons;
     void Start()
     {
         valueManager = FindFirstObjectByType<ValueManager>();
@@ -21,6 +22,7 @@ public class PersonController : MonoBehaviour
 
     void Update()
     {
+        person.sprite = persons[valueManager.currentPerson];
         UpdateUI(); // Controleer en update UI bij elke frame
     }
 

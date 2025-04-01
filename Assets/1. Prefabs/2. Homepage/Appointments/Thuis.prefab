@@ -349,6 +349,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exists: 0
   uiImage: {fileID: 6017781598565746322}
+  person: {fileID: 7155048728993194890}
+  persons:
+  - {fileID: 21300000, guid: c57ce6d9bca067845a4b19b65aca8d59, type: 3}
+  - {fileID: 21300000, guid: a2a0e74cf4a2bcb4b947031350e7b0e8, type: 3}
+  - {fileID: 21300000, guid: cf5fa9b2c77ab1f49b4c44dd87e601d8, type: 3}
+  - {fileID: 21300000, guid: 84166750ba19dd14ca63b50fb9752c85, type: 3}
 --- !u!1 &5042451726146161507
 GameObject:
   m_ObjectHideFlags: 0

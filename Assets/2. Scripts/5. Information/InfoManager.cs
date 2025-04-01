@@ -16,6 +16,7 @@ public class InfoManager : MonoBehaviour
     public GameObject warningName;
     public GameObject warningNameDocter;
 
+    private int avatarId;
     public async void CreateInfo()
     {
         // verzamel alle info
@@ -24,7 +25,6 @@ public class InfoManager : MonoBehaviour
         var birthDate = birthDayInput.text;
         bool hasRoute = route.isOn;
         // genereer een random avatar
-        int avatarId = UnityEngine.Random.Range(1, 4);
 
         DateTime date;
         if (childName != String.Empty)
@@ -71,5 +71,10 @@ public class InfoManager : MonoBehaviour
             warningName.SetActive(true);
         }
         
+    }
+
+    public void SetAvatar(int avatarId)
+    {
+        this.avatarId = avatarId;
     }
 }
