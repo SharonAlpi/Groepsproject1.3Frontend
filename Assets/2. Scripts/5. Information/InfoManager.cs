@@ -12,7 +12,9 @@ public class InfoManager : MonoBehaviour
     public TMP_InputField doctorInput;
     public TMP_InputField birthDayInput;
     public Toggle route;
-
+    public GameObject warningBirthDay;
+    public GameObject warningName;
+    public GameObject warningNameDocter;
 
     public async void CreateInfo()
     {
@@ -22,31 +24,52 @@ public class InfoManager : MonoBehaviour
         var birthDate = birthDayInput.text;
         bool hasRoute = route.isOn;
         // genereer een random avatar
-        int avatarId = UnityEngine.Random.Range(1, 3);
+        int avatarId = UnityEngine.Random.Range(1, 4);
 
-        // parse de date
-        var date = DateTime.Parse(birthDate);
-        Debug.Log(hasRoute);
-        // maak het info object aan
-        var info = new Info
+        DateTime date;
+        if (childName != String.Empty)
         {
-            name = childName,
-            nameDocter = doctorName,
-            route = hasRoute,
-            avatarId = avatarId,
-            birthDay = birthDate
-        };
-        var response = await infoClient.CreateInfo(info);
-        switch (response)
+            if (doctorName != String.Empty)
+            {
+                // tryparse de date
+                if (DateTime.TryParse(birthDate, out date))
+                {
+                    Debug.Log(hasRoute);
+                    // maak het info object aan
+                    var info = new Info
+                    {
+                        name = childName,
+                        nameDocter = doctorName,
+                        route = hasRoute,
+                        avatarId = avatarId,
+                        birthDay = birthDate
+                    };
+                    var response = await infoClient.CreateInfo(info);
+                    switch (response)
+                    {
+                        // het maakt ons alleen maar uit of het fout gegaan is of niet
+                        case WebRequestError err:
+                            Debug.Log(err.ErrorMessage);
+                            break;
+                        default:
+                            SceneManager.LoadScene("ExplanationScene", LoadSceneMode.Single);
+                            break;
+                    };
+                }
+                else
+                {
+                    warningBirthDay.SetActive(true);
+                }
+            }
+            else
+            {
+                warningNameDocter.SetActive(true);
+            }
+        }
+        else
         {
-            // het maakt ons alleen maar uit of het fout gegaan is of niet
-            case WebRequestError err:
-                Debug.Log(err.ErrorMessage);
-                break;
-            default:
-                SceneManager.LoadScene("ExplanationScene", LoadSceneMode.Single);
-                break;
-        };
-
+            warningName.SetActive(true);
+        }
+        
     }
 }
