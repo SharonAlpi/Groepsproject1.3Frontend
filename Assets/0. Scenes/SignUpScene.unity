@@ -289,7 +289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -830, y: -500}
+  m_AnchoredPosition: {x: -830, y: -318}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &272512548
@@ -312,8 +312,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '*Invalid Password, it must contain at least 1 uppercase 1 number 1 lowercase
-    and 1 non alphaneumeric'
+  m_text: "*Invalid Password, it must contain at least: \n10 characters,\n1 uppercase,\n1
+    number,\n1 lowercase,\n1 non alphaneumeric\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2729,7 +2729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7165095506738307609, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -299
+      value: -176
       objectReference: {fileID: 0}
     - target: {fileID: 8212024860505364004, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
       propertyPath: m_Pivot.x
