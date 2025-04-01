@@ -645,7 +645,7 @@ MonoBehaviour:
   _name: Follow-Up
   _sticker: 0
   isQueue: 0
-  infoScene: 10
+  infoScene: 1
 --- !u!114 &9046692297453970626
 MonoBehaviour:
   m_ObjectHideFlags: 0

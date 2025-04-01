@@ -98,7 +98,7 @@ MonoBehaviour:
   _name: Thuis
   _sticker: 0
   isQueue: 0
-  infoScene: 12
+  infoScene: 6
 --- !u!114 &2980929160162481505
 MonoBehaviour:
   m_ObjectHideFlags: 0

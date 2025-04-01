@@ -53,17 +53,20 @@ public class RouteManager : MonoBehaviour
 
     private async void GetInfo()
     {
-        var response = await RouteClient.Getinfo();
-        if (response is WebRequestData<Info> result)
+        if (!OperationRoute)
         {
-            if(result.Data != null)
+            var response = await RouteClient.Getinfo();
+            if (response is WebRequestData<Info> result)
             {
-                route.SetActive(true);
+                if (result.Data != null)
+                {
+                    route.SetActive(true);
+                }
+                else
+                {
+                    info.SetActive(true);
+                }
             }
-            else
-            {
-                info.SetActive(true);
-            }           
         }
     }
 }

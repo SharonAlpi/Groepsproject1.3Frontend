@@ -8,7 +8,7 @@ public class UserEventHandler : MonoBehaviour
     public ValueManager valueManager;
     public PanelManager panelManager;
     public AppointmentController controller;
-
+    public string[] Scenes;
     //Appointments
     public void CreateAppointment()
     {
@@ -33,7 +33,7 @@ public class UserEventHandler : MonoBehaviour
     //UI -> Panels
     public void GoToScene()
     {
-        SceneManager.LoadScene(valueManager.sceneDirective);
+        SceneManager.LoadScene(Scenes[valueManager.sceneDirective]);
     }
 
     public void GoToPanel(int index)

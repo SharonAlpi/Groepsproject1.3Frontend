@@ -234,7 +234,7 @@ MonoBehaviour:
   _name: Nazorg
   _sticker: 0
   isQueue: 0
-  infoScene: 8
+  infoScene: 4
 --- !u!114 &7872177747105753115
 MonoBehaviour:
   m_ObjectHideFlags: 0

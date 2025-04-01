@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2063715551020218884, guid: f74854edb4813eb438283d38796616d4, type: 3}
       propertyPath: m_Name
-      value: BunnyLayerInfo Variant
+      value: BunnyLayerSingleScreen
       objectReference: {fileID: 0}
     - target: {fileID: 2106305827172638297, guid: f74854edb4813eb438283d38796616d4, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -188,7 +188,8 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 109
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6751463975574508483, guid: f74854edb4813eb438283d38796616d4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 public class WebClient : MonoBehaviour
 {
-    public string baseUrl = "https://localhost:7257";
+    private string baseUrl = "https://avansict22268840123.azurewebsites.net";
     private string token;
 
     public static WebClient instance { get; private set; }
