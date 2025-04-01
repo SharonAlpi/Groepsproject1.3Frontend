@@ -163,7 +163,7 @@ MonoBehaviour:
   _name: Gipsafname
   _sticker: 0
   isQueue: 0
-  infoScene: 0
+  infoScene: 14
 --- !u!114 &1497722138214307452
 MonoBehaviour:
   m_ObjectHideFlags: 0
