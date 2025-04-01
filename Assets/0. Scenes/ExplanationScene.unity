@@ -1346,7 +1346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1628985091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1364,7 +1364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 353, y: -232}
+  m_AnchoredPosition: {x: 0, y: -232}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628985092
@@ -1505,6 +1505,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OperationRoute: 0
   RouteClient: {fileID: 258665011}
+  info: {fileID: 1628985090}
+  route: {fileID: 1861893669}
 --- !u!4 &1684474815
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,7 +1677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1861893670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1693,7 +1695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -373, y: -232}
+  m_AnchoredPosition: {x: 0, y: -232}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1861893671
@@ -1742,7 +1744,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1684474814}
         m_TargetAssemblyTypeName: RouteManager, Assembly-CSharp
-        m_MethodName: PlaceholderDecideRoute
+        m_MethodName: DecideRoute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

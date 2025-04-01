@@ -20,21 +20,21 @@ public class InfoManager : MonoBehaviour
         var childName = childNameInput.text;
         var doctorName = doctorInput.text;
         var birthDate = birthDayInput.text;
-        var hasRoute = route.isOn;
+        bool hasRoute = route.isOn;
         // genereer een random avatar
         int avatarId = UnityEngine.Random.Range(1, 3);
 
         // parse de date
         var date = DateTime.Parse(birthDate);
-
+        Debug.Log(hasRoute);
         // maak het info object aan
         var info = new Info
         {
-            Name = childName,
-            NameDocter = doctorName,
-            Route = route,
-            AvatarId = avatarId,
-            BirthDay = birthDate
+            name = childName,
+            nameDocter = doctorName,
+            route = hasRoute,
+            avatarId = avatarId,
+            birthDay = birthDate
         };
         var response = await infoClient.CreateInfo(info);
         switch (response)

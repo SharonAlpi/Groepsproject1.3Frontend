@@ -11,7 +11,7 @@ public class AppointmentClient : MonoBehaviour
     WebClient _client;
     public string baseUrl = ("https://localhost:7257");
 
-    private void Start()
+    private void Awake()
     {
         _client = GameObject.Find("ApiManager").GetComponent<WebClient>();      
     }

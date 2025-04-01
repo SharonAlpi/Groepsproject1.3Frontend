@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using UnityEngine.Sprites;
-using UnityEngine;
 
 public class PlayVideo : MonoBehaviour
 {

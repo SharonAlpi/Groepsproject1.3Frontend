@@ -15,6 +15,7 @@ public class InfoClient : MonoBehaviour
         switch (response)
         {
             case WebRequestData<string> res:
+                Debug.Log(res.Data);
                 var jsonData = JsonUtility.FromJson<Info>(res.Data);
                 return new WebRequestData<Info>(jsonData);
             default:
@@ -24,7 +25,7 @@ public class InfoClient : MonoBehaviour
     }
     public async Awaitable<IWebRequestReponse> CreateInfo(Info info)
     {
-        Debug.Log($"Creating info : name{info.Name}");
+        Debug.Log($"Creating info : name{info.name}");
         var data = JsonUtility.ToJson(info);
         Debug.Log($"Serialized Info: {data}");
 
