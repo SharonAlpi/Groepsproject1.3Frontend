@@ -15,7 +15,7 @@ public class InfoManager : MonoBehaviour
     public GameObject warningBirthDay;
     public GameObject warningName;
     public GameObject warningNameDocter;
-
+    public Button[] avatars;
     private int avatarId;
     public async void CreateInfo()
     {
@@ -76,5 +76,14 @@ public class InfoManager : MonoBehaviour
     public void SetAvatar(int avatarId)
     {
         this.avatarId = avatarId;
+    }
+
+    private void Update()
+    {
+        foreach(Button avatar in avatars)
+        {
+            avatar.interactable = true;
+        }
+        avatars[avatarId].interactable = false;
     }
 }

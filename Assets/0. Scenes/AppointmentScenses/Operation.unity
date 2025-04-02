@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Explanation
+  m_text: Uitleg
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1315,7 +1315,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 64, y: 150}
-  m_SizeDelta: {x: 72, y: 118.01524}
+  m_SizeDelta: {x: 144, y: 177.0228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1010361383
 MonoBehaviour:
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7311321, g: 0.7820237, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.91764706, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2007,7 +2007,7 @@ RectTransform:
   - {fileID: 260435250}
   - {fileID: 1053331249}
   - {fileID: 372194340}
-  - {fileID: 1605354372}
+  - {fileID: 1491345110}
   m_Father: {fileID: 1376884367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2053,55 +2053,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491094234}
   m_CullTransparentMesh: 1
---- !u!1 &1530011751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1530011753}
-  - component: {fileID: 1530011752}
-  m_Layer: 0
-  m_Name: RouteManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1530011752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530011751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b33e6397add5d6247ad93c36dba68d19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OperationRoute: 1
-  RouteClient: {fileID: 1663199031}
-  info: {fileID: 0}
-  route: {fileID: 0}
---- !u!4 &1530011753
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1530011751}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1605354371
+--- !u!1001 &1491345109
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2109,9 +2061,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1491094235}
     m_Modifications:
+    - target: {fileID: 1402818448129139776, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 312
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402818448129139776, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 134
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561663243524830475, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831324733276723510, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_text
+      value: 'Welkom op het informatiescherm, hier vind je alle informatie over een
+        door jou geselecteerde afspraak.
+
+        Er wat uitgelegd wat de afspraak
+        inhoudt, en er zijn tips voor tijdens of na de afspraak. Ook is er een leuk
+        filmpje voor extra uitleg.'
+      objectReference: {fileID: 0}
     - target: {fileID: 2367831095563015316, guid: 48c928e3f2391b649a889882f9692028, type: 3}
       propertyPath: m_Name
-      value: InfoButton (5)
+      value: InfoButton (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542665415477007827, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8125695909464364900, guid: 48c928e3f2391b649a889882f9692028, type: 3}
       propertyPath: m_Pivot.x
@@ -2198,11 +2175,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48c928e3f2391b649a889882f9692028, type: 3}
---- !u!224 &1605354372 stripped
+--- !u!224 &1491345110 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8125695909464364900, guid: 48c928e3f2391b649a889882f9692028, type: 3}
-  m_PrefabInstance: {fileID: 1605354371}
+  m_PrefabInstance: {fileID: 1491345109}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1530011751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1530011753}
+  - component: {fileID: 1530011752}
+  m_Layer: 0
+  m_Name: RouteManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1530011752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530011751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33e6397add5d6247ad93c36dba68d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OperationRoute: 1
+  RouteClient: {fileID: 1663199031}
+  info: {fileID: 0}
+  route: {fileID: 0}
+--- !u!4 &1530011753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530011751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631253657
 GameObject:
   m_ObjectHideFlags: 0

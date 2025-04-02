@@ -1080,7 +1080,8 @@ PrefabInstance:
         het behandelplan in te voeren.
 
         Na het invoeren van de informatie
-        kun je naar de route gaan door op de knop "Ga naar route"  te klikken'
+        kun je naar de route gaan door op de knop "Ga naar route"  te klikken die
+        na het invoeren van je informatie verschijnt.'
       objectReference: {fileID: 0}
     - target: {fileID: 1831324733276723510, guid: 48c928e3f2391b649a889882f9692028, type: 3}
       propertyPath: m_fontColor.b

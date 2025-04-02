@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Explanation
+  m_text: Uitleg
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1686,7 +1686,7 @@ RectTransform:
   - {fileID: 260435250}
   - {fileID: 1053331249}
   - {fileID: 372194340}
-  - {fileID: 1605354372}
+  - {fileID: 1662025766}
   m_Father: {fileID: 1376884367}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1732,7 +1732,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491094234}
   m_CullTransparentMesh: 1
---- !u!1001 &1605354371
+--- !u!1001 &1662025765
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1740,9 +1740,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1491094235}
     m_Modifications:
+    - target: {fileID: 1402818448129139776, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 312
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402818448129139776, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 134
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561663243524830475, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1831324733276723510, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_text
+      value: 'Welkom op het informatiescherm, hier vind je alle informatie over een
+        door jou geselecteerde afspraak.
+
+        Er wat uitgelegd wat de afspraak
+        inhoudt, en er zijn tips voor tijdens of na de afspraak. Ook is er een leuk
+        filmpje voor extra uitleg.'
+      objectReference: {fileID: 0}
     - target: {fileID: 2367831095563015316, guid: 48c928e3f2391b649a889882f9692028, type: 3}
       propertyPath: m_Name
-      value: InfoButton (4)
+      value: InfoButton (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2542665415477007827, guid: 48c928e3f2391b649a889882f9692028, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8125695909464364900, guid: 48c928e3f2391b649a889882f9692028, type: 3}
       propertyPath: m_Pivot.x
@@ -1829,10 +1854,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48c928e3f2391b649a889882f9692028, type: 3}
---- !u!224 &1605354372 stripped
+--- !u!224 &1662025766 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8125695909464364900, guid: 48c928e3f2391b649a889882f9692028, type: 3}
-  m_PrefabInstance: {fileID: 1605354371}
+  m_PrefabInstance: {fileID: 1662025765}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1851947914
 GameObject:

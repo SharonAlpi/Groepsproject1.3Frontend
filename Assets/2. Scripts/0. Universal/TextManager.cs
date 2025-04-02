@@ -8,7 +8,7 @@ public class TextManager : MonoBehaviour
 
     void Start()
     {
-        HideAllText();
+
         UpdateText();
     }
 
