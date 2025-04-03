@@ -2795,8 +2795,11 @@ PrefabInstance:
         Je avatar geeft weer waar je al bent,
 
         Door
-        op plan een afspraak te drukken kun je een afrpaak inplannen, deze komt dan
-        ook op de tijdlijn te staan'
+        op plan een afspraak te drukken kun je een afspraak inplannen, deze komt
+        dan ook op de tijdlijn te staan
+
+        als je op een stap klikt, is er
+        meer informatie over de stap te zien'
       objectReference: {fileID: 0}
     - target: {fileID: 2367831095563015316, guid: 48c928e3f2391b649a889882f9692028, type: 3}
       propertyPath: m_Name

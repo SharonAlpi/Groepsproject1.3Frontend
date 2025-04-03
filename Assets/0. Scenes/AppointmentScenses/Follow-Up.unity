@@ -727,16 +727,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Placeholder Opt 1
-
-    - Placeholder Opt 1
-
-    - Placeholder Opt 1
-
-    -
-    Placeholder Opt 1
-
-    - Placeholder Opt 1'
+  m_text: "- Schrijf vragen op \u2013 Zo vergeet je niets wat je aan de dokter wilt
+    vragen.\n\n- Luister goed \u2013 De dokter geeft belangrijke tips voor je herstel.\n\n-
+    Volg het advies op \u2013 Oefeningen of extra zorg helpen je sneller beter te
+    worden."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -763,8 +757,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

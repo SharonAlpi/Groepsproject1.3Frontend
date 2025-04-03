@@ -2055,12 +2055,12 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Welkom bij Gips&Zo! Hier ga je ontdekken wat er allemaal gebeurt als je
     een gipsbehandeling krijgt. Elke stap van het gipsavontuur wordt uitgelegd, zodat
-    je precies weet wat je kunt verwachten. \n\nEerst voer je je informatie in door
+    je precies weet wat je kunt verwachten. \n\nVoer eerst je informatie in door
     op de knop met het potlood te klikken. Daarna kun je klikken op de wereldknop.
-    Klik daarna op de verschillende stappen en leer wat er gaat gebeuren. Zo word
-    jij een echte gipsheld!\n\r\nOuders, doe mee! Samen ontdekken maakt het leuker
-    en helpt je kind zich beter voor te bereiden. Bekijk de stappen samen en stel
-    vragen als dat nodig is!\r\n"
+    Klik daarna op de verschillende stappen in de route en leer wat er gaat gebeuren.
+    Zo word jij een echte gipsheld!\n\r\nOuders, doe mee! Samen ontdekken maakt het
+    leuker en helpt je kind zich beter voor te bereiden. Bekijk de stappen samen
+    en stel vragen als dat nodig is!\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
