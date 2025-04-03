@@ -47,6 +47,6 @@ public class RuntimeController : MonoBehaviour
 
         //UI -> Text
         prefabName.text = valueManager.appointmentName;
-        prefabDate.text = valueManager.appointmentDate.ToString();
+
     }
 }

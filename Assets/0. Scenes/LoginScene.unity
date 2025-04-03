@@ -837,7 +837,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Login
+  m_text: Inloggen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2092,9 +2092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Login
-
-'
+  m_text: Inloggen
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2795,6 +2793,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 444002965}
     m_Modifications:
+    - target: {fileID: 1719886013098073666, guid: 35bec68cdb96dc04e93d405e10a63091, type: 3}
+      propertyPath: m_text
+      value: Terug
+      objectReference: {fileID: 0}
     - target: {fileID: 2286817712943529105, guid: 35bec68cdb96dc04e93d405e10a63091, type: 3}
       propertyPath: m_Name
       value: Back

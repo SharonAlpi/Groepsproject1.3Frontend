@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using System.Runtime.Serialization;
 using TMPro;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class InfoManager : MonoBehaviour
         // verzamel alle info
         var childName = childNameInput.text;
         var doctorName = doctorInput.text;
-        var birthDate = birthDayInput.text;
+        string birthDate = birthDayInput.text;
         bool hasRoute = route.isOn;
         // genereer een random avatar
 
@@ -32,17 +33,18 @@ public class InfoManager : MonoBehaviour
             if (doctorName != String.Empty)
             {
                 // tryparse de date
-                if (DateTime.TryParse(birthDate, out date))
+                if (DateTime.TryParseExact(birthDate, "dd-MM-yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
                 {
                     Debug.Log(hasRoute);
+                    Debug.Log(birthDate);
                     // maak het info object aan
                     var info = new Info
                     {
                         name = childName,
                         nameDocter = doctorName,
                         route = hasRoute,
-                        avatarId = avatarId,
-                        birthDay = birthDate
+                        avatarId = avatarId,                     
+                        birthDay = DateTime.ParseExact(birthDate, "dd-MM-yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd")
                     };
                     var response = await infoClient.CreateInfo(info);
                     switch (response)

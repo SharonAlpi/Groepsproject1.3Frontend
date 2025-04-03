@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
@@ -42,7 +43,7 @@ public class AppointmentController : MonoBehaviour
         bool maycreate = true;
         // Haal invoer op
         string appointmentName = nameCreateInput.text;
-        DateTime appointmentDate = DateTime.Parse(dateCreateInput.text);
+        DateTime appointmentDate = DateTime.ParseExact(dateCreateInput.text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
         List<Appointment> appointmentList = await appointmentClient.GetAllAppointments();
 
         foreach (Appointment app in appointmentList)
@@ -121,7 +122,7 @@ public class AppointmentController : MonoBehaviour
     {
         bool mayChange = true;
         // Haal de nieuwe gegevens op
-        DateTime newDate = DateTime.Parse(dateInput.text);
+        DateTime newDate = DateTime.ParseExact(dateInput.text, "dd-MM-yyyy", CultureInfo.InvariantCulture);
         List<Appointment> appointmentList= await appointmentClient.GetAllAppointments();
         foreach (Appointment app in appointmentList)
         {
@@ -305,12 +306,12 @@ public class AppointmentController : MonoBehaviour
             var prefab = defaultAppointmentPrefabs[i];
 
             // Maak een nieuw `Appointment` object voor de database
-            Debug.Log(valueManager.startDate.AddDays(i * 5));
+            Debug.Log(valueManager.startDate.AddDays(i * 5).AddYears(i * 1));
             Appointment newAppointment = new Appointment
             {
                 id = Guid.NewGuid().ToString(),
                 name = prefab.name,
-                date = valueManager.startDate.AddDays(i * 5).ToString("yyyy-MM-ddTHH:mm:ss"),
+                date = valueManager.startDate.AddDays(i * 5).AddYears(i * 1).ToString("yyyy-MM-ddTHH:mm:ss"),
                 stickerId = 0,
                 userId = valueManager.UsersID
             };

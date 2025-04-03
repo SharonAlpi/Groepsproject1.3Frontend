@@ -27,6 +27,20 @@ public class AppointmentData : MonoBehaviour
     public bool isQueue;
     public int infoScene;
 
+    private void Update()
+    {
+        if(!isQueue)
+        {
+            if (_date.Date <= DateTime.Now.Date.AddYears(1))
+            {
+                tmpDate.gameObject.SetActive(true);
+            }
+            else
+            {
+                tmpDate.gameObject.SetActive(false);
+            }
+        }
+    }
     private void Start()
     {
         // vind de scripts van de manager
@@ -112,7 +126,7 @@ public class AppointmentData : MonoBehaviour
     {
         if (!isQueue)
         {
-            tmpDate.text = _date.ToString("yyyy-MM-dd");
+            tmpDate.text = _date.ToString("dd-MM-yyyy");
             tmpName.text = _name;
         }
     }
