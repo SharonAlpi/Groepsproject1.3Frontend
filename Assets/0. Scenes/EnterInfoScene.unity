@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue
+  m_text: Klaar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1163,8 +1163,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4766,11 +4766,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7165095506738307609, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -704
+      value: -691
       objectReference: {fileID: 0}
     - target: {fileID: 7165095506738307609, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -467
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 8212024860505364004, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
       propertyPath: m_Pivot.x
@@ -4863,6 +4863,7 @@ PrefabInstance:
     - {fileID: 3976502844578159878, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
     - {fileID: 8293499837177057161, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
     - {fileID: 7812284188493447740, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
+    - {fileID: 7591500345811939953, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8995d7b2e3badd34ba40059b527f3993, type: 3}
